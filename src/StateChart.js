@@ -5,7 +5,6 @@ import {
   Geography,
   ZoomableGroup
 } from "react-simple-maps";
-
 import andamannicobar from './topojsons/states/andamannicobar.json';
 import andhrapradesh from './topojsons/states/andhrapradesh.json';
 import arunachalpradesh from './topojsons/states/arunachalpradesh.json';

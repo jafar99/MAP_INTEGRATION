@@ -16,8 +16,8 @@ const App = () => {
           </Typography>
         </Toolbar>
       </AppBar> */}
-      <CssBaseline />
-      <Container maxWidth="md">
+      {/* <CssBaseline /> */}
+      <Container maxWidth="100%">
           <AreaSelector />
       </Container>
     </React.Fragment>

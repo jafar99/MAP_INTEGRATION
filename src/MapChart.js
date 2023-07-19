@@ -6,9 +6,10 @@ import {
   ZoomableGroup,
   Marker
 } from "react-simple-maps";
+import {Row, Col} from "antd";
 
 import india from './topojsons/india.json';
-import { Alert } from "@material-ui/lab";
+// import { Alert } from "@material-ui/lab";
 
 const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
   const stateMarkers = [
@@ -50,87 +51,135 @@ const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
     { name: "West Bengal", coordinates: [87.8550, 22.9868] },
   ];
 
+  const stateDensity = {
+    // density data for each state
+    "Andhra Pradesh": 0.8,
+    "Andaman & Nicobar Island": 0.2,
+    "Jammu & Kashmir": 0.6,
+    "Arunachal Pradesh": 0.2,
+    "Assam": 0.4,
+    "Bihar": 0.1,
+    "Chandigarh": 0.6,
+    "Chhattisgarh": 0.6,
+    "Daman & Diu": 0.2,
+    "Delhi": 0.6,
+    "Goa": 0.4,
+    "Gujarat": 0.5,
+    "Haryana": 0.6,
+    "Himachal Pradesh": 0.4,
+    "Jharkhand": 0.5,
+    "Karnataka": 0.8,
+    "Kerala": 0.8,
+    "Ladakh": 0.2,
+    "Lakshadweep": 0.2,
+    "Madhya Pradesh": 0.3,
+    "Maharashtra": 0.6,
+    "Manipur": 0.2,
+    "Meghalaya": 0.2,
+    "Mizoram": 0.2,
+    "Nagaland": 0.2,
+    "Odisha": 0.6,
+    "Puducherry": 0.4,
+    "Punjab": 0.6,
+    "Rajasthan": 0.6,
+    "Sikkim": 0.2,
+    "Tamil Nadu": 0.8,
+    "Telangana": 0.8,
+    "Tripura": 0.2,
+    "Uttar Pradesh": 0.6,
+    "Uttarakhand": 0.4,
+    "West Bengal": 0.8,
+
+  };
+
   return (
     <>
-      <ComposableMap
-        data-tip=""
-        projection="geoMercator"
-        width={165}
-        height={168}
-        projectionConfig={{ scale: 270 }}
-      >
-        <ZoomableGroup center={[81, 22]}>
-          <Geographies geography={india}>
-            {({ geographies }) =>
-              geographies.map(geo => {
-                const { ST_NM } = geo.properties;
-                
-                const stateMarker = stateMarkers.find(marker => marker.name === ST_NM);
-                return (
-                  <>
-                    <Geography
-                      key={geo.rsmKey}
-                      geography={geo}
-                      onMouseEnter={() => {
-                        // setTooltipContent(ST_NM);
-                      }}
-                      onMouseLeave={() => {
-                        setTooltipContent("");
-                      }}
-                      onClick={() => {
-                        alert(ST_NM);
-                        setStateName(ST_NM);
-                        setShowDistrict(true);
-                      }}
-                      style={{
-                        default: {
-                          fill: "#D6D6DA",
-                          outline: "none"
-                        },
-                        hover: {
-                          fill: "#A8A196",
-                          outline: "none"
-                        },
-                        pressed: {
-                          fill: "#2E8B57",
-                          outline: "none"
-                        }
-                      }}
-                    />
-                    {/* Render state marker */}
-                    {stateMarker && (
-                      <Marker coordinates={stateMarker.coordinates}>
-                        {/* <circle
-                          r={1}
-                          fill="red"
-                          onClick={() => {
-                            setStateName(stateMarker.name);
-                            setShowDistrict(true);
-                          }}
-                        /> */}
-                        <text
-                          textAnchor="middle"
-                          // y={stateMarker.coordinates[1] > 0 ? 0 : 15}
-                          style={{
-                            fill: "#000",
-                            fontWeight: "bold",
-                        
-                            fontSize: "0.11rem",
-                            zIndex : "auto" // Add zIndex property
-                          }}
-                        >
-                          {stateMarker.name}
-                        </text>
-                      </Marker>
-                    )}
-                  </>
-                );
-              })
-            }
-          </Geographies>
-        </ZoomableGroup>
-      </ComposableMap>
-    </>
+    <Row>
+      <Col span={12}>
+        <ComposableMap
+          data-tip=""
+          projection="geoMercator"
+          width={165}
+          height={160}
+          projectionConfig={{ scale: 260 }}
+        >
+          <ZoomableGroup center={[81, 25]}>
+            <Geographies geography={india}>
+              {({ geographies }) =>
+                geographies.map(geo => {
+                  const { ST_NM } = geo.properties;
+
+                  const stateMarker = stateMarkers.find(marker => marker.name === ST_NM);
+
+                  const density = stateDensity[ST_NM];
+
+                  return (
+                    <>
+                      <Geography
+                        key={geo.rsmKey}
+                        geography={geo}
+                        onMouseEnter={() => {
+                          // setTooltipContent(ST_NM);
+                        }}
+                        onMouseLeave={() => {
+                          setTooltipContent("");
+                        }}
+                        onClick={() => {
+                          // alert(ST_NM);
+                          setStateName(ST_NM);
+                          setShowDistrict(true);
+                        }}
+                        style={{
+                          default: {
+                            fill: `rgba(206, 104, 21, ${density})`, // Change fill color based on density
+                            outline: "none"
+                          },
+                          hover: {
+                            fill: "#F6F1F1",
+                            outline: "none"
+                          },
+                          pressed: {
+                            fill: "#2E8B57",
+                            outline: "none"
+                          }
+                        }}
+                      />
+                      {/* Render state marker */}
+                      {stateMarker && (
+                        <Marker coordinates={stateMarker.coordinates}>
+                          {/* <circle
+                            r={1}
+                            fill="red"
+                            onClick={() => {
+                              setStateName(stateMarker.name);
+                              setShowDistrict(true);
+                            }}
+                          /> */}
+                          <text
+                            textAnchor="middle"
+                            // y={stateMarker.coordinates[1] > 0 ? 0 : 15}
+                            style={{
+                              // fill: "#000",
+                              fontWeight: "bold",
+                              fontSize: "0.12rem",
+                              zIndex: "auto" // Add zIndex property
+                            }}
+                          >
+                            {stateMarker.name}
+                          </text>
+                        </Marker>
+                      )}
+                    </>
+                  );
+                })
+              }
+            </Geographies>
+          </ZoomableGroup>
+        </ComposableMap>
+      </Col>
+      <Col span={12}></Col>
+    </Row>
+  </>
   );
 };
 
