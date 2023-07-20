@@ -39,3 +39,69 @@ const maharashtra = [
   
   ];
   
+
+
+//   <ComposableMap
+//   data-tip=""
+//   projection="geoMercator"
+//   width={150}
+//   height={150}
+//   projectionConfig={{ scale: scaleMap }}
+// >
+//   <ZoomableGroup zoom={zoomMap} center={centerMap}>
+//     <Geographies geography={geoURL}>
+//       {({ geographies }) =>
+//         geographies.map(geo => (
+//           <Geography
+//             key={geo.rsmKey}
+//             geography={geo}
+//             onMouseEnter={() => {
+//               const { district } = geo.properties;
+//               setTooltipContent(`${district}`);
+//             }}
+//             onMouseLeave={() => {
+//               setTooltipContent("");
+//             }}
+//             onClick={() => {
+//               const { district } = geo.properties;
+//               setDistrictName(`${district}`);
+//             }}
+//             style={{
+//               default: {
+//                 fill: "#D6D6DA",
+//                 outline: "none"
+//               },
+//               hover: {
+//                 fill: "forestgreen",
+//                 outline: "none"
+//               },
+//               pressed: {
+//                 fill: "#2E8B57",
+//                 outline: "none"
+//               }
+//             }}
+//           />
+//         ))
+//       }
+//     </Geographies>
+//     {/* Render district markers */}
+//     {selectedState === "Maharashtra" &&
+//       districtMarkers.map((marker, index) => (
+//         <Marker key={index} coordinates={marker.coordinates}>
+//           <circle r={2} fill="red" />
+//           <text
+//             textAnchor="middle"
+//             y={marker.coordinates[1] > 0 ? -10 : 15}
+//             style={{
+//               fill: "#000",
+//               fontWeight: "bold",
+//               fontSize: "0.12rem",
+//               zIndex: "auto" // Add zIndex property
+//             }}
+//           >
+//             {marker.name}
+//           </text>
+//         </Marker>
+//       ))}
+//   </ZoomableGroup>
+// </ComposableMap>

@@ -32,7 +32,7 @@ const MapDialog = props => {
     const [contentD, setContentD] = useState("");
     const [DTName, setDTName] = useState("");
     return (
-        <Dialog fullScreen TransitionComponent={Transition} open={props.show} onClose={props.closeModal} style={{ backgroundColor: 'black !important' }}>
+        <Dialog fullScreen TransitionComponent={Transition} open={props.show} onClose={props.closeModal} >
             <AppBar className={classes.appBar}>
             <Toolbar>
                 <IconButton edge="start" color="inherit" onClick={props.closeModal} aria-label="close">
@@ -51,8 +51,8 @@ const MapDialog = props => {
             </Toolbar>
             </AppBar>
             <CssBaseline />
-            <div style={{ height: '2000px', backgroundColor: 'black' }}>
-                <Container maxWidth="md" style={{ border: '1px solid black', backgroundColor: 'black' }}>
+            <div style={{ height: '2000px', backgroundColor: 'white' }}>
+                <Container maxWidth="md" >
                     <StateChart setTooltipContent={setContentD} setDistrictName={setDTName} selectedState={props.StateName} />
                     <ReactTooltip>{contentD}</ReactTooltip>
                 </Container>
