@@ -39,13 +39,19 @@ import uttarakhand from "./topojsons/states/uttarakhand.json";
 import uttarpradesh from "./topojsons/states/uttarpradesh.json";
 import westbengal from "./topojsons/states/westbengal.json";
 
+
+
+
+
 const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
   let geoURL;
   let zoomMap = 1;
   let centerMap = [80, 22];
   let scaleMap = 400;
+
   if (selectedState === "Andaman & Nicobar Island") {
     geoURL = andamannicobar;
+    
     scaleMap = 1000;
     centerMap = [93, 10];
   } else if (selectedState === "Andhra Pradesh") {
@@ -174,14 +180,14 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     centerMap = [87.7, 24.2];
   }
 
-  const districtMarkers = [
-    { name: "Ahmednagar", coordinates: [74.7384, 19.0946] },
+  const maharashtraMarkers = [
+    { name: "Ahmednagar", coordinates: [74.7384, 19.1946] },
     { name: "Akola", coordinates: [77.0023, 20.7059] },
     { name: "Amravati", coordinates: [77.7523, 20.932] },
     { name: "Aurangabad", coordinates: [75.3433, 19.8762] },
-    { name: "Beed", coordinates: [75.7555, 18.9909] },
-    { name: "Bhandara", coordinates: [80.0674, 21.1739] },
-    { name: "Buldhana", coordinates: [76.1842, 20.547] },
+    { name: "Beed", coordinates: [75.4055, 18.7009] },
+    { name: "Bhandara", coordinates: [82.5074, 21.1739] },
+    { name: "Buldhana", coordinates: [76.1842, 20.507] },
     { name: "Chandrapur", coordinates: [79.2961, 19.9615] },
     { name: "Dhule", coordinates: [74.7745, 20.9042] },
     { name: "Gadchiroli", coordinates: [80.1811, 20.196] },
@@ -192,7 +198,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     { name: "Kolhapur", coordinates: [74.2433, 16.705] },
     { name: "Latur", coordinates: [76.5604, 18.4088] },
     { name: "Mumbai", coordinates: [72.8353, 18.9388] },
-    { name: "Mumbai Suburban", coordinates: [72.8483, 19.1314] },
+    { name: "Mumbai Suburban", coordinates: [72.9583, 19.1314] },
     { name: "Nagpur", coordinates: [79.0882, 21.1458] },
     { name: "Nanded", coordinates: [77.3206, 19.1383] },
     { name: "Nandurbar", coordinates: [74.2407, 21.3876] },
@@ -211,14 +217,71 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     { name: "Wardha", coordinates: [78.6022, 20.7453] },
     { name: "Washim", coordinates: [77.1406, 20.1136] },
     { name: "Yavatmal", coordinates: [78.1204, 20.3888] },
+//     // Add more districts as needed
+  ];
+  const karnatakaMarkers = [
+    { name: "Bagalkot", coordinates: [75.7037, 16.1852] },
+    { name: "Ballari", coordinates: [76.9384, 15.1394] },
+    { name: "Belagavi (Belgaum)", coordinates: [74.7336, 15.8497] },
+    { name: "Bangalore Rural", coordinates: [77.3860, 13.1100] },
+    { name: "Bangalore", coordinates: [77.5946, 12.9716] },
+    { name: "Bidar", coordinates: [77.5172, 17.9139] },
+    { name: "Chamarajanagar", coordinates: [76.9506, 11.9261] },
+    { name: "Chikkaballapur", coordinates: [77.7358, 13.4359] },
+    { name: "Chikkamagaluru (Chikmagalur)", coordinates: [75.7486, 13.3222] },
+    { name: "Chitradurga", coordinates: [76.4036, 14.2226] },
+    { name: "Dakshina Kannada", coordinates: [75.3600, 12.9141] },
+    { name: "Davanagere", coordinates: [75.9277, 14.4666] },
+    { name: "Dharwad", coordinates: [75.1214, 15.4589] },
+    { name: "Gadag", coordinates: [75.6412, 15.4345] },
+    { name: "Hassan", coordinates: [76.1000, 13.0055] },
+    { name: "Haveri", coordinates: [75.3960, 14.7937] },
+    { name: "Gulbarga", coordinates: [76.8343, 17.3297] },
+    { name: "Kodagu", coordinates: [75.8069, 12.3375] },
+    { name: "Kolar", coordinates: [78.1299, 13.1367] },
+    { name: "Koppal", coordinates: [76.1622, 15.3503] },
+    { name: "Mandya", coordinates: [76.8961, 12.5224] },
+    { name: "Mysore", coordinates: [76.6413, 12.2958] },
+    { name: "Raichur", coordinates: [77.3550, 16.2120] },
+    { name: "Ramanagara", coordinates: [77.2750, 12.7169] },
+    { name: "Shivamogga (Shimoga)", coordinates: [75.5681, 13.9299] },
+    { name: "Tumakuru", coordinates: [77.1010, 13.3376] },
+    { name: "Udupi", coordinates: [74.7421, 13.3409] },
+    { name: "Uttara Kannada (Karwar)", coordinates: [74.4084, 14.8598] },
+    { name: "Vijayapura (Bijapur)", coordinates: [75.7139, 16.8292] },
+    { name: "Yadgir", coordinates: [77.4871, 16.7695] },
+    // Add more districts as needed
+];
+const keralaMarkers = [
+    { name: "Alappuzha", coordinates: [76.3331, 9.4981] },
+    { name: "Ernakulam", coordinates: [76.6131, 10.0483] },
+    { name: "Idukki", coordinates: [77.1604, 9.9252] },
+    { name: "Kannur", coordinates: [75.3704, 11.8745] },
+    { name: "Kasaragod", coordinates: [74.9958, 12.4993] },
+    { name: "Kollam", coordinates: [76.6113, 8.8932] },
+    { name: "Kottayam", coordinates: [76.5222, 9.5916] },
+    { name: "Kozhikode", coordinates: [75.7804, 11.2588] },
+    { name: "Malappuram", coordinates: [76.0894, 11.0737] },
+    { name: "Palakkad", coordinates: [76.6548, 10.7867] },
+    { name: "Pathanamthitta", coordinates: [76.7782, 9.2642] },
+    { name: "Thiruvananthapuram", coordinates: [76.9366, 8.5241] },
+    { name: "Thrissur", coordinates: [76.2134, 10.5276] },
+    { name: "Wayanad", coordinates: [76.0830, 11.6850] },
     // Add more districts as needed
   ];
   
-
-
-  return (
+  let markers = [];
+  if (selectedState === "Maharashtra") {
+    markers = maharashtraMarkers;
+  } else if (selectedState === "Karnataka") {
+    markers = karnatakaMarkers;
+  } else if (selectedState === "Kerala") {
+    markers = keralaMarkers;
+  }
+  
+return (
     <>
-     {console.log("Selected State:", selectedState)}
+      {console.log("Selected State:", selectedState)}
       <ComposableMap
         data-tip=""
         projection="geoMercator"
@@ -231,20 +294,15 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
             {({ geographies }) =>
               geographies.map((geo) => {
                 const { district } = geo.properties;
-                // alert(district);
                 console.log("District:", district);
-                const districtMarker = districtMarkers.find(
-                  (marker) => marker.name === district
-                );
-                    // alert(districtMarker);
-                    console.log("District Marker:", districtMarker);
+                const marker = markers.find((marker) => marker.name === district);
+                console.log("Marker:", marker);
+
                 return (
                   <>
-                  
                     <Geography
                       geography={geo}
                       key={geo.rsmKey}
-                        
                       onMouseEnter={() => {
                         setTooltipContent(district);
                       }}
@@ -269,25 +327,22 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                         },
                       }}
                     />
-                    
-                    {districtMarker && (
-                        <Marker coordinates={districtMarker.coordinates}>
-                          
-                          <text
-                            textAnchor="middle"
-                            // y={stateMarker.coordinates[1] > 0 ? 0 : 15}
-                            style={{
-                              fill: "black",
-                              fontWeight: "bold",
-                              fontSize: "0.1rem",
-                              zIndex: "auto" // Add zIndex property
-                            }}
-                          >
-                            {districtMarker.name}
-                            
-                          </text>
-                        </Marker>
-                      )}
+
+                    {marker && (
+                      <Marker coordinates={marker.coordinates}>
+                        <text
+                          textAnchor="middle"
+                          style={{
+                            fill: "black",
+                            fontWeight: "bold",
+                            fontSize: "0.1rem",
+                            zIndex: "auto",
+                          }}
+                        >
+                          {marker.name}
+                        </text>
+                      </Marker>
+                    )}
                   </>
                 );
               })
