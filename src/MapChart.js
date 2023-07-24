@@ -9,8 +9,7 @@ import {
 import {Row, Col} from "antd";
 
 import india from './topojsons/india.json';
-// import { Alert } from "@material-ui/lab";
-
+// import { Alert } from "@material-ui/lab"
 const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
   const stateMarkers = [
     { name: "Andhra Pradesh", coordinates: [80.7400, 15.9129] },
