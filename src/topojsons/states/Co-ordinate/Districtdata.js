@@ -355,21 +355,27 @@ const keralaMarkers = [
   
   
   const arunachalPradeshMarkers = [
-    { name: "Itanagar", coordinates: [93.6200, 27.0844] },
+    { name: "Anjaw", coordinates: [96.8141, 28.0237] },
+    { name: "Dibang Valley (Upper Dibang Valley)", coordinates: [95.5094, 28.1234] },
+    { name: "East Kameng", coordinates: [93.2067, 27.5333] },
+    { name: "East Siang", coordinates: [95.3762, 28.4650] },
+    { name: "Kamle", coordinates: [93.4674, 27.9753] },
+    { name: "Kra Daadi", coordinates: [92.7000, 27.7833] },
+    { name: "Kurung Kumey", coordinates: [93.2333, 28.0000] },
+    { name: "Lepa Rada (Lower Subansiri)", coordinates: [94.8958, 27.8902] },
+    { name: "Lohit", coordinates: [95.9900, 27.7000] },
+    { name: "Longding", coordinates: [94.5964, 27.1591] },
+    { name: "Lower Dibang Valley", coordinates: [95.9900, 28.3667] },
+    { name: "Namsai", coordinates: [96.2167, 27.5833] },
+    { name: "Pakke Kessang", coordinates: [92.9903, 27.2214] },
+    { name: "Shi Yomi", coordinates: [94.8036, 28.7838] },
+    { name: "Siang", coordinates: [95.4486, 28.0341] },
     { name: "Tawang", coordinates: [91.8644, 27.5874] },
-    { name: "Bomdila", coordinates: [92.6840, 27.2530] },
-    { name: "Pasighat", coordinates: [95.3252, 28.0667] },
-    { name: "Ziro", coordinates: [93.8398, 27.5580] },
-    { name: "Aalo", coordinates: [94.8292, 28.1980] },
-    { name: "Roing", coordinates: [95.7665, 28.8833] },
-    { name: "Naharlagun", coordinates: [93.6958, 27.0975] },
-    { name: "Tezu", coordinates: [96.1703, 27.9269] },
-    { name: "Anini", coordinates: [93.8260, 28.1692] },
-    { name: "Daporijo", coordinates: [94.2140, 27.8796] },
-    { name: "Tuting", coordinates: [94.8285, 29.0303] },
-    { name: "Khonsa", coordinates: [95.5664, 26.9803] },
-    { name: "Changlang", coordinates: [95.2960, 27.3132] },
-    // Add more cities/places as needed
+    { name: "Tirap", coordinates: [95.3333, 27.0000] },
+    { name: "Upper Siang", coordinates: [94.2000, 28.3333] },
+    { name: "Upper Subansiri", coordinates: [94.2500, 28.1667] },
+    { name: "West Kameng", coordinates: [92.3333, 27.1667] },
+    { name: "West Siang", coordinates: [94.3926, 28.5935] }
   ];
   const assamMarkers = [
     { name: "Guwahati", coordinates: [91.7362, 26.1445] },
