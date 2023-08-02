@@ -1,0 +1,61 @@
+/* CSS Reset to remove default styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    /* margin: 50% auto; */
+    margin: 10% auto;
+    width: 40rem;
+}
+
+/* Header style */
+thead th {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #f2f2f2;
+    background-color: #003a86;
+    color: #fff;
+    border: 1px solid #fff; /* Add white border to header cells */
+}
+
+/* Increase width for the "Sites" header */
+thead th:nth-child(2) {
+    width: 30%; /* Adjust the width value as needed */
+}
+
+/* Rest of the styles remain the same as before */
+td {
+    /* padding: 12px; */
+    text-align: center;
+    /* border-bottom: 3px solid #f2f2f2; */
+    border: 1px solid #fff; /* Add white border to data cells */
+}
+
+/* Style for the nested table */
+td > table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style for nested table cells */
+td > table td {
+    padding: 8px;
+    /* border: 3px solid #f2f2f2; */
+}
+
+/* Update the background color for the table body */
+tbody {
+    background-color: #58a8e9;
+}
+
+
+
+/* Add some animation on hover for a modern touch */
+
+
+/* Reduce padding on table rows (tr) */
+tbody tr {
+    padding: 6px 0; /* Adjust the padding as needed */
+}
+
+/* For smaller screens, make the table rows display as block for a more readable layout */

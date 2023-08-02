@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import {
   ComposableMap,
   Geographies,
@@ -38,85 +39,122 @@ import tripura from "./topojsons/states/tripura.json";
 import uttarakhand from "./topojsons/states/uttarakhand.json";
 import uttarpradesh from "./topojsons/states/uttarpradesh.json";
 import westbengal from "./topojsons/states/westbengal.json";
-import{andhrapradeshMarkers,telanganaMarkers,westBengalMarkers,uttarpradeshMarkers,tripuraMarkers,tamilNaduMarkers,sikkimMarkers,odishaMarkers,nagalandMarkers,mizoramMarkers,meghalayaMarkers,manipurMarkers,andamanNicobarMarkers,andhraPradeshMarkers,arunachalPradeshMarkers,assamMarkers,biharMarkers,chhattisgarhMarkers,goaMarkers,gujaratMarkers ,jharkhandMarkers,lakshadweepMarkers,madhyaPradeshMarkers,keralaMarkers, karnatakaMarkers, maharashtraMarkers,jammuKashmirMarkers,himachalPradeshMarkers,punjabMarkers,uttarakhandMarkers,haryanaMarkers,delhiMarkers,rajasthanMarkers }from "./topojsons/states/Co-ordinate/Districtdata";
+import {
+  andhrapradeshMarkers,
+  telanganaMarkers,
+  westBengalMarkers,
+  uttarpradeshMarkers,
+  tripuraMarkers,
+  tamilNaduMarkers,
+  sikkimMarkers,
+  odishaMarkers,
+  nagalandMarkers,
+  mizoramMarkers,
+  meghalayaMarkers,
+  manipurMarkers,
+  andamanNicobarMarkers,
+  andhraPradeshMarkers,
+  arunachalPradeshMarkers,
+  assamMarkers,
+  biharMarkers,
+  chhattisgarhMarkers,
+  goaMarkers,
+  gujaratMarkers,
+  jharkhandMarkers,
+  lakshadweepMarkers,
+  madhyaPradeshMarkers,
+  keralaMarkers,
+  karnatakaMarkers,
+  maharashtraMarkers,
+  jammuKashmirMarkers,
+  himachalPradeshMarkers,
+  punjabMarkers,
+  uttarakhandMarkers,
+  haryanaMarkers,
+  delhiMarkers,
+  rajasthanMarkers,
+} from "./topojsons/states/Co-ordinate/Districtdata";
+import { Row, Col } from "antd";
+import axios from "axios";
+import './style.css'
 
 let markers = [];
 const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
   let geoURL;
   let zoomMap = 1;
-  let centerMap = [80, 22];
+  let centerMap = [60, 22];
   let scaleMap = 400;
 
   if (selectedState === "Andaman & Nicobar Island") {
     geoURL = andamannicobar;
-    markers=andamanNicobarMarkers;
-    scaleMap = 1000;
+    markers = andamanNicobarMarkers;
+    scaleMap = 1200;
     centerMap = [93, 10];
-  } else if (selectedState === "Andhra Pradesh") {
-    markers=andhrapradeshMarkers;
+  } else if (selectedState === "AndhraPradesh") {
+    markers = andhrapradeshMarkers;
     geoURL = andhrapradesh;
-    scaleMap = 800;
-    centerMap = [80, 17];
+    scaleMap = 1100;
+    centerMap = [81, 17];
   } else if (selectedState === "Arunachal Pradesh") {
-    markers=arunachalPradeshMarkers;
+    markers = arunachalPradeshMarkers;
     geoURL = arunachalpradesh;
     scaleMap = 1200;
     centerMap = [94.5, 28];
   } else if (selectedState === "Assam") {
-    markers=assamMarkers;
+    markers = assamMarkers;
     geoURL = assam;
     scaleMap = 1350;
     centerMap = [92.9, 26];
   } else if (selectedState === "Bihar") {
-    markers=biharMarkers; 
+    markers = biharMarkers;
     geoURL = bihar;
-    scaleMap = 1300;
+    scaleMap = 1800;
     centerMap = [85.5, 26];
   } else if (selectedState === "Chhattisgarh") {
-    markers=chhattisgarhMarkers;
+    markers = chhattisgarhMarkers;
     geoURL = chhattisgarh;
     scaleMap = 1100;
     centerMap = [82, 21];
-  } else if (selectedState === "NCT of Delhi") {
-    markers=goaMarkers;
-    markers=delhiMarkers;
+  } else if (selectedState === "Delhi") {
+    markers = goaMarkers;
+    markers = delhiMarkers;
     geoURL = delhi;
-    scaleMap = 11000;
+    scaleMap = 12000;
     centerMap = [77.05, 28.6];
   } else if (selectedState === "Goa") {
     geoURL = goa;
     scaleMap = 6000;
     centerMap = [74, 15.25];
   } else if (selectedState === "Gujarat") {
-    markers=gujaratMarkers;
+    markers = gujaratMarkers;
     geoURL = gujarat;
-    scaleMap = 1000;
+    scaleMap = 1400;
     centerMap = [71.5, 22];
   } else if (selectedState === "Haryana") {
-    markers=haryanaMarkers;
+    markers = haryanaMarkers;
     geoURL = haryana;
-    scaleMap = 1700;
+    scaleMap = 2200;
     centerMap = [76, 29];
   } else if (selectedState === "Himachal Pradesh") {
     geoURL = himachalpradesh;
-    markers=himachalPradeshMarkers;
-    scaleMap = 2000;
+    markers = himachalPradeshMarkers;
+    scaleMap = 2300;
     centerMap = [77.4, 31.8];
   } else if (selectedState === "Jammu & Kashmir") {
-    markers=jammuKashmirMarkers;
+    markers = jammuKashmirMarkers;
     geoURL = jammukashmir;
-    scaleMap = 1000;
+    scaleMap = 1400;
     centerMap = [76.3, 35];
   } else if (selectedState === "Jharkhand") {
-    markers=jharkhandMarkers;
+    markers = jharkhandMarkers;
     geoURL = jharkhand;
     scaleMap = 1700;
     centerMap = [85.7, 23.6];
   } else if (selectedState === "Karnataka") {
-    markers=lakshadweepMarkers;
+    markers = lakshadweepMarkers;
     markers = karnatakaMarkers;
     geoURL = karnataka;
-    scaleMap = 1100;
+    scaleMap = 1600;
     centerMap = [76.5, 15];
   } else if (selectedState === "Kerala") {
     markers = keralaMarkers;
@@ -128,158 +166,232 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     scaleMap = 2300;
     centerMap = [73, 11];
   } else if (selectedState === "Madhya Pradesh") {
-    markers=madhyaPradeshMarkers;
+    markers = madhyaPradeshMarkers;
     geoURL = madhyapradesh;
-    scaleMap = 900;
+    scaleMap = 1300;
     centerMap = [78.5, 24];
   } else if (selectedState === "Maharashtra") {
     markers = maharashtraMarkers;
     geoURL = maharashtra;
-    scaleMap = 1000;
+    scaleMap = 1200;
     centerMap = [76.8, 19.3];
   } else if (selectedState === "Manipur") {
-    markers=manipurMarkers;
+    markers = manipurMarkers;
     geoURL = manipur;
     scaleMap = 3400;
     centerMap = [93.8, 24.7];
   } else if (selectedState === "Meghalaya") {
-    markers=meghalayaMarkers;
+    markers = meghalayaMarkers;
     geoURL = meghalaya;
     scaleMap = 2500;
     centerMap = [91.3, 25.4];
   } else if (selectedState === "Mizoram") {
-    markers=mizoramMarkers;
+    markers = mizoramMarkers;
     geoURL = mizoram;
     scaleMap = 2900;
     centerMap = [92.8, 23.25];
   } else if (selectedState === "Nagaland") {
-    markers=nagalandMarkers;
+    markers = nagalandMarkers;
     geoURL = nagaland;
     scaleMap = 4000;
     centerMap = [94.3, 26.1];
   } else if (selectedState === "Odisha") {
-    markers=odishaMarkers;
+    markers = odishaMarkers;
     geoURL = odisha;
     scaleMap = 1300;
     centerMap = [84.4, 20.25];
   } else if (selectedState === "Punjab") {
-    markers=punjabMarkers
+    markers = punjabMarkers;
     geoURL = punjab;
-    scaleMap = 2300;
+    scaleMap = 2500;
     centerMap = [75.35, 31.1];
   } else if (selectedState === "Rajasthan") {
-    markers=rajasthanMarkers;
+    markers = rajasthanMarkers;
     geoURL = rajasthan;
-    scaleMap = 900;
+    scaleMap = 1100;
     centerMap = [74, 26.3];
   } else if (selectedState === "Sikkim") {
-    markers=sikkimMarkers;
+    markers = sikkimMarkers;
     geoURL = sikkim;
     scaleMap = 6000;
     centerMap = [88.45, 27.6];
-  } else if (selectedState === "Tamil Nadu") {
-    markers=tamilNaduMarkers;
+  } else if (selectedState === "Tamilnadu") {
+    markers = tamilNaduMarkers;
     geoURL = tamilnadu;
     scaleMap = 1300;
     centerMap = [78.25, 10.8];
   } else if (selectedState === "Telangana") {
-    markers=telanganaMarkers;
+    markers = telanganaMarkers;
     geoURL = telangana;
     scaleMap = 1800;
     centerMap = [79.5, 17.9];
   } else if (selectedState === "Tripura") {
-    markers=tripuraMarkers
+    markers = tripuraMarkers;
     geoURL = tripura;
     scaleMap = 4500;
     centerMap = [91.75, 23.75];
   } else if (selectedState === "Uttarakhand") {
-    markers=uttarakhandMarkers;
+    markers = uttarakhandMarkers;
     geoURL = uttarakhand;
-    scaleMap = 2000;  
+    scaleMap = 2000;
     centerMap = [79.3, 30];
   } else if (selectedState === "Uttar Pradesh") {
     markers = uttarpradeshMarkers; // Fix the variable name here
     geoURL = uttarpradesh; // Make sure the geoURL matches your data source
-    scaleMap = 1000;
+    scaleMap = 1600;
     centerMap = [80.8, 27];
-} else if (selectedState === "West Bengal") {
+  } else if (selectedState === "West Bengal") {
     markers = westBengalMarkers;
     geoURL = westbengal;
     scaleMap = 1200;
     centerMap = [87.7, 24.2];
-}
-  
-return (
+  }
+
+
+  const [apiData, setApiData] = React.useState([]);
+
+  function sitesData() {
+    axios
+      .get(`/get-site-count-by-region?region_name=${selectedState}`)
+      .then((res) => {
+        setApiData(res?.data?.data);
+        console.log("API Data:", res?.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  useEffect(() => {
+    sitesData();
+  }, []);
+
+  return (
     <>
       {console.log("Selected State:", selectedState)}
-      <ComposableMap
-        data-tip=""
-        projection="geoMercator"
-        width={150}
-        height={150}
-        projectionConfig={{ scale: scaleMap }}
-      >
-        <ZoomableGroup zoom={zoomMap} center={centerMap}>
-          <Geographies geography={geoURL}>
-            {({ geographies }) =>
-              geographies.map((geo) => {
-                const { district } = geo.properties;
-                console.log("District:", district);
-                const marker = markers.find((marker) => marker.name === district);
-                console.log("Marker:", marker);
+      <Row>
+        <Col span={18}>
+          <ComposableMap
+            data-tip=""
+            projection="geoMercator"
+            width={200}
+            height={240}
+            projectionConfig={{ scale: scaleMap }}
+          >
+            <ZoomableGroup zoom={zoomMap} center={centerMap}>
+              <Geographies geography={geoURL}>
+                {({ geographies }) =>
+                  geographies.map((geo) => {
+                    const { district } = geo.properties;
+                    // console.log("District:", district);
+                    const marker = markers.find(
+                      (marker) => marker.name === district
+                    );
+                    // console.log("Marker:", marker);
 
-                return (
-                  <>
-                    <Geography
-                      geography={geo}
-                      key={geo.rsmKey}
-                      onMouseEnter={() => {
-                        setTooltipContent(district);
-                      }}
-                      onMouseLeave={() => {
-                        setTooltipContent("");
-                      }}
-                      onClick={() => {
-                        setDistrictName(district);
-                      }}
-                      style={{
-                        default: {
-                          fill: "#D6D6DA",
-                          outline: "none",
-                        },
-                        hover: {
-                          fill: "forestgreen",
-                          outline: "none",
-                        },
-                        pressed: {
-                          fill: "#2E8B57",
-                          outline: "none",
-                        },
-                      }}
-                    />
-
-                    {marker && (
-                      <Marker coordinates={marker.coordinates}>
-                        <text
-                          textAnchor="middle"
-                          style={{
-                            fill: "black",
-                            fontWeight: "bold",
-                            fontSize: "0.1rem",
-                            zIndex: "auto",
+                    return (
+                      <>
+                        <Geography
+                          geography={geo}
+                          key={geo.rsmKey}
+                          onMouseEnter={() => {
+                            setTooltipContent(district);
                           }}
-                        >
-                          {marker.name}
-                        </text>
-                      </Marker>
-                    )}
-                  </>
-                );
-              })
-            }
-          </Geographies>
-        </ZoomableGroup>
-      </ComposableMap>
+                          onMouseLeave={() => {
+                            setTooltipContent("");
+                          }}
+                          onClick={() => {
+                            setDistrictName(district);
+                          }}
+                          style={{
+                            default: {
+                              fill: "#D6D6DA",
+                              outline: "none",
+                            },
+                            hover: {
+                              fill: "forestgreen",
+                              outline: "none",
+                            },
+                            pressed: {
+                              fill: "#2E8B57",
+                              outline: "none",
+                            },
+                          }}
+                        />
+
+                        {marker && (
+                          <Marker coordinates={marker.coordinates}>
+                            <text
+                              textAnchor="middle"
+                              style={{
+                                fill: "black",
+                                fontWeight: "bold",
+                                fontSize: "0.18rem",
+                                zIndex: "auto",
+                              }}
+                            >
+                              {marker.name}
+                            </text>
+                          </Marker>
+                        )}
+                      </>
+                    );
+                  })
+                }
+              </Geographies>
+            </ZoomableGroup>
+          </ComposableMap>
+        </Col>
+       <Col span={6}>
+            <>
+            <table>
+    <thead>
+        <tr>
+            <th>Area Name</th>
+            <th colSpan={2}>Sites</th>
+            <th>Site Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        {apiData?.map((item, index) => {
+            return (
+                <React.Fragment key={index}>
+                    <tr>
+                        <td>{item.area_name ? item.area_name : "No sites"}</td>
+                        <td colSpan={2}>
+                            {item.site_names && item.site_names.length > 0 ? (
+                                <table>
+                                    <tbody>
+                                        {item.site_names.map((site, idx) => (
+                                            <tr key={idx}>
+                                                <td>{site}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            ) : (
+                                "No sites"
+                            )}
+                        </td>
+                        <td>{item.site_count ? item.site_count : "No sites"}</td>
+                    </tr>
+                </React.Fragment>
+            );
+        })}
+
+        {apiData?.length === 0 && (
+            <tr>
+                <td colSpan={4} style={{ textAlign: "center" , padding : "10px 0px" , fontSize:"1.4rem" }}>
+                    No Data Found
+                </td>
+            </tr>
+        )}
+    </tbody>
+</table>
+
+            </>    
+       </Col>
+      </Row>
     </>
   );
 };
