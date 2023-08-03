@@ -64,18 +64,20 @@ const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
                     const getFillColor = (siteCount) => {
                       let colorValue = 0;
                       let x = siteCount * 100;
-                      colorValue = x / maxvalue; 
+                      if(!maxvalue == 0){
+                        colorValue = (x / maxvalue).toFixed(0); 
+                      }
                       
                       if (colorValue <= 0) {
                         return `#D8D8D8`;
                       } else if (colorValue >= 1 && colorValue <= 25) {
-                        return `#CEF1F6`;
+                        return `#FFFFF0`;
                       } else if (colorValue >= 26 && colorValue <= 50) {
-                        return `#8FDDE9`;
+                        return `#FAF8D9`;
                       } else if (colorValue >= 51 && colorValue <= 75) {
-                        return `#53BBCA`;
+                        return `#F4EDCA`;
                       } else if (colorValue >= 76) {
-                        return `#288CBC`;
+                        return `#F1E0B6`;
                       }
                     };
 

@@ -76,10 +76,12 @@ import {
 } from "./topojsons/states/Co-ordinate/Districtdata";
 import { Row, Col } from "antd";
 import axios from "axios";
-import './style.css'
+import "./style.css";
 
 let markers = [];
 const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
+  const [geoURLNew, setGeoURLNew] = React.useState([]);
+  const[maxvalue,setmaxvalue]=React.useState(0);
   let geoURL;
   let zoomMap = 1;
   let centerMap = [60, 22];
@@ -87,166 +89,197 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
 
   if (selectedState === "Andaman & Nicobar Island") {
     geoURL = andamannicobar;
+    // setGeoURLNew(andamannicobar);
     markers = andamanNicobarMarkers;
     scaleMap = 1200;
     centerMap = [93, 10];
   } else if (selectedState === "AndhraPradesh") {
     markers = andhrapradeshMarkers;
     geoURL = andhrapradesh;
+    // setGeoURLNew(andhrapradesh);
     scaleMap = 1100;
     centerMap = [81, 17];
   } else if (selectedState === "Arunachal Pradesh") {
     markers = arunachalPradeshMarkers;
     geoURL = arunachalpradesh;
+    // setGeoURLNew(arunachalpradesh);
     scaleMap = 1200;
     centerMap = [94.5, 28];
   } else if (selectedState === "Assam") {
     markers = assamMarkers;
     geoURL = assam;
+    // setGeoURLNew(assam);
     scaleMap = 1350;
     centerMap = [92.9, 26];
   } else if (selectedState === "Bihar") {
     markers = biharMarkers;
     geoURL = bihar;
+    // setGeoURLNew(bihar);
     scaleMap = 1800;
     centerMap = [85.5, 26];
   } else if (selectedState === "Chhattisgarh") {
     markers = chhattisgarhMarkers;
     geoURL = chhattisgarh;
+    // setGeoURLNew(chhattisgarh);
     scaleMap = 1100;
     centerMap = [82, 21];
   } else if (selectedState === "Delhi") {
     markers = goaMarkers;
     markers = delhiMarkers;
     geoURL = delhi;
+    // setGeoURLNew(delhi);
     scaleMap = 12000;
     centerMap = [77.05, 28.6];
   } else if (selectedState === "Goa") {
     geoURL = goa;
+    // setGeoURLNew(goa);
     scaleMap = 6000;
     centerMap = [74, 15.25];
   } else if (selectedState === "Gujarat") {
     markers = gujaratMarkers;
     geoURL = gujarat;
+    // setGeoURLNew(gujarat);
     scaleMap = 1400;
     centerMap = [71.5, 22];
   } else if (selectedState === "Haryana") {
     markers = haryanaMarkers;
     geoURL = haryana;
+    // setGeoURLNew(haryana);
     scaleMap = 2200;
     centerMap = [76, 29];
   } else if (selectedState === "Himachal Pradesh") {
     geoURL = himachalpradesh;
+    // setGeoURLNew(himachalpradesh);
     markers = himachalPradeshMarkers;
     scaleMap = 2300;
     centerMap = [77.4, 31.8];
   } else if (selectedState === "Jammu & Kashmir") {
     markers = jammuKashmirMarkers;
     geoURL = jammukashmir;
+    // setGeoURLNew(jammukashmir);
     scaleMap = 1400;
     centerMap = [76.3, 35];
   } else if (selectedState === "Jharkhand") {
     markers = jharkhandMarkers;
     geoURL = jharkhand;
+    // setGeoURLNew(jharkhand);
     scaleMap = 1700;
     centerMap = [85.7, 23.6];
   } else if (selectedState === "Karnataka") {
     markers = lakshadweepMarkers;
     markers = karnatakaMarkers;
     geoURL = karnataka;
+    // setGeoURLNew(karnataka);
     scaleMap = 1600;
     centerMap = [76.5, 15];
   } else if (selectedState === "Kerala") {
     markers = keralaMarkers;
     geoURL = kerala;
+    // setGeoURLNew(kerala);
     scaleMap = 1800;
     centerMap = [76, 10.5];
   } else if (selectedState === "Lakshadweep") {
     geoURL = lakshadweep;
+    // setGeoURLNew(lakshadweep);
     scaleMap = 2300;
     centerMap = [73, 11];
   } else if (selectedState === "Madhya Pradesh") {
     markers = madhyaPradeshMarkers;
     geoURL = madhyapradesh;
+    // setGeoURLNew(madhyapradesh);
     scaleMap = 1300;
     centerMap = [78.5, 24];
   } else if (selectedState === "Maharashtra") {
     markers = maharashtraMarkers;
     geoURL = maharashtra;
+    // setGeoURLNew(maharashtra);
     scaleMap = 1200;
     centerMap = [76.8, 19.3];
   } else if (selectedState === "Manipur") {
     markers = manipurMarkers;
     geoURL = manipur;
+    // setGeoURLNew(manipur);
     scaleMap = 3400;
     centerMap = [93.8, 24.7];
   } else if (selectedState === "Meghalaya") {
     markers = meghalayaMarkers;
     geoURL = meghalaya;
+    // setGeoURLNew(meghalaya);
     scaleMap = 2500;
     centerMap = [91.3, 25.4];
   } else if (selectedState === "Mizoram") {
     markers = mizoramMarkers;
     geoURL = mizoram;
+    // setGeoURLNew(mizoram);
     scaleMap = 2900;
     centerMap = [92.8, 23.25];
   } else if (selectedState === "Nagaland") {
     markers = nagalandMarkers;
     geoURL = nagaland;
+    // setGeoURLNew(nagaland);
     scaleMap = 4000;
     centerMap = [94.3, 26.1];
   } else if (selectedState === "Odisha") {
     markers = odishaMarkers;
     geoURL = odisha;
+    // setGeoURLNew(odisha);
     scaleMap = 1300;
     centerMap = [84.4, 20.25];
   } else if (selectedState === "Punjab") {
     markers = punjabMarkers;
     geoURL = punjab;
+    // setGeoURLNew(punjab);
     scaleMap = 2500;
     centerMap = [75.35, 31.1];
   } else if (selectedState === "Rajasthan") {
     markers = rajasthanMarkers;
     geoURL = rajasthan;
+    // setGeoURLNew(rajasthan);
     scaleMap = 1100;
     centerMap = [74, 26.3];
   } else if (selectedState === "Sikkim") {
     markers = sikkimMarkers;
     geoURL = sikkim;
+    // setGeoURLNew(sikkim);
     scaleMap = 6000;
     centerMap = [88.45, 27.6];
   } else if (selectedState === "Tamilnadu") {
     markers = tamilNaduMarkers;
     geoURL = tamilnadu;
+    // setGeoURLNew(tamilnadu);
     scaleMap = 1300;
     centerMap = [78.25, 10.8];
   } else if (selectedState === "Telangana") {
     markers = telanganaMarkers;
     geoURL = telangana;
+    // setGeoURLNew(telangana);
     scaleMap = 1800;
     centerMap = [79.5, 17.9];
   } else if (selectedState === "Tripura") {
     markers = tripuraMarkers;
     geoURL = tripura;
+    // setGeoURLNew(tripura);
     scaleMap = 4500;
     centerMap = [91.75, 23.75];
   } else if (selectedState === "Uttarakhand") {
     markers = uttarakhandMarkers;
     geoURL = uttarakhand;
+    // setGeoURLNew(uttarakhand);
     scaleMap = 2000;
     centerMap = [79.3, 30];
   } else if (selectedState === "Uttar Pradesh") {
     markers = uttarpradeshMarkers; // Fix the variable name here
     geoURL = uttarpradesh; // Make sure the geoURL matches your data source
+    // setGeoURLNew(uttarpradesh);
     scaleMap = 1600;
     centerMap = [80.8, 27];
   } else if (selectedState === "West Bengal") {
     markers = westBengalMarkers;
     geoURL = westbengal;
+    // setGeoURLNew(westbengal);
     scaleMap = 1200;
     centerMap = [87.7, 24.2];
   }
-
 
   const [apiData, setApiData] = React.useState([]);
 
@@ -256,6 +289,36 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
       .then((res) => {
         setApiData(res?.data?.data);
         console.log("API Data:", res?.data.data);
+        // console.log("geoURL:", geoURL.objects);
+        let keyForObject = ""
+        Object.keys(geoURL.objects).forEach(function (key) {
+          keyForObject = key.toString();
+          // console.log("Key:", keyForObject);
+        });
+        // console.log("New:",  geoURL.objects[keyForObject].geometries);
+        // for loop on geoURL.objects[keyForObject].geometries & print properties
+        let highest_site_count = 0;
+        for (let i = 0; i < geoURL.objects[keyForObject].geometries.length; i++) {
+          // console.log("district:", geoURL.objects[keyForObject].geometries[i].properties.district);
+         let value = 0
+          // find district in res?.data.data using for loop
+          for (let j = 0; j < res?.data.data.length; j++) {
+            if (geoURL.objects[keyForObject].geometries[i].properties.district == res?.data.data[j].area_name) {
+              value = res?.data.data[j].site_count;
+              console.log("value:", value);
+              break;
+            }
+          }
+          geoURL.objects[keyForObject].geometries[i].properties["site_count"] = value;
+          const site_count =  geoURL.objects[keyForObject].geometries[i].properties.site_count;
+          if (site_count > highest_site_count) {
+            highest_site_count = site_count;
+          }
+          // console.log("site_count:", geoURL.objects[keyForObject].geometries[i].properties.site_count);
+        }
+        setmaxvalue(highest_site_count);
+        // console.log("maxvalue",highest_site_count);
+        setGeoURLNew(geoURL);
       })
       .catch((err) => {
         console.log(err);
@@ -279,7 +342,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
             projectionConfig={{ scale: scaleMap }}
           >
             <ZoomableGroup zoom={zoomMap} center={centerMap}>
-              <Geographies geography={geoURL}>
+              <Geographies geography={geoURLNew == {} ? geoURL : geoURLNew}>
                 {({ geographies }) =>
                   geographies.map((geo) => {
                     const { district } = geo.properties;
@@ -288,6 +351,27 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                       (marker) => marker.name === district
                     );
                     // console.log("Marker:", marker);
+
+                    const getFillColor = (siteCount) => {
+                      let colorValue = 0;
+                      let x = siteCount * 100;
+                      if(!maxvalue == 0){
+                        colorValue = (x / maxvalue).toFixed(0); 
+                      }
+
+                      
+                      if (colorValue <= 0) {
+                        return `#D8D8D8`;
+                      } else if (colorValue >= 1 && colorValue <= 25) {
+                        return `#FFFFF0`;
+                      } else if (colorValue >= 26 && colorValue <= 50) {
+                        return `#FAF8D9`;
+                      } else if (colorValue >= 51 && colorValue <= 75) {
+                        return `#F4EDCA`;
+                      } else if (colorValue >= 76) {
+                        return `#F1E0B6`;
+                      }
+                    };
 
                     return (
                       <>
@@ -305,11 +389,11 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                           }}
                           style={{
                             default: {
-                              fill: "#D6D6DA",
-                              outline: "none",
+                              fill: geo.properties.hasOwnProperty("site_count") ? getFillColor(geo.properties.site_count) : "#D8D8D8", // Change fill color based on density
+                              outline: "black",
                             },
                             hover: {
-                              fill: "forestgreen",
+                              fill: "#808080",
                               outline: "none",
                             },
                             pressed: {
@@ -342,12 +426,55 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
             </ZoomableGroup>
           </ComposableMap>
         </Col>
-       <Col span={6}>
-            <>
- 
+        <Col span={6}>
+          <>
+          {/* <table>
+    <thead>
+        <tr>
+            <th>Area Name</th>
+            <th colSpan={2}>Sites</th>
+            <th>Site Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        {apiData?.map((item, index) => {
+            return (
+                <React.Fragment key={index}>
+                    <tr>
+                        <td>{item.area_name ? item.area_name : "No sites"}</td>
+                        <td colSpan={2}>
+                            {item.site_names && item.site_names.length > 0 ? (
+                                <table>
+                                    <tbody>
+                                        {item?.site_names.map((site, idx) => (
+                                            <tr key={idx}>
+                                                <td>{site}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            ) : (
+                                "No sites"
+                            )}
+                        </td>
+                        <td>{item.site_count ? item.site_count : "No sites"}</td>
+                    </tr>
+                </React.Fragment>
+            );
+        })}
 
-            </>    
-       </Col>
+        {apiData?.length === 0 && (
+            <tr>
+                <td colSpan={4} style={{ textAlign: "center" , padding : "10px 0px" , fontSize:"1.4rem" }}>
+                    No Data Found
+                </td>
+            </tr>
+        )}
+    </tbody>
+</table> */}
+
+          </>
+        </Col>
       </Row>
     </>
   );
