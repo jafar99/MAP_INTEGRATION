@@ -1,61 +1,66 @@
-/* CSS Reset to remove default styles */
+/* Apply modern styling to the outer table */
 table {
-    border-collapse: collapse;
-    width: 100%;
-    font-family: Arial, sans-serif;
-    /* margin: 50% auto; */
-    margin: 10% auto;
     width: 40rem;
-}
-
-/* Header style */
-thead th {
-    padding: 12px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 50% auto;
     text-align: center;
-    border-bottom: 1px solid #f2f2f2;
-    background-color: #003a86;
+  }
+  
+  /* Apply styling to the table header row */
+  thead th {
+    background-color: #0c0c0c;
+    padding: 15px;
+    font-weight: bold;
     color: #fff;
-    border: 1px solid #fff; /* Add white border to header cells */
-}
-
-/* Increase width for the "Sites" header */
-thead th:nth-child(2) {
-    width: 30%; /* Adjust the width value as needed */
-}
-
-/* Rest of the styles remain the same as before */
-td {
-    /* padding: 12px; */
-    text-align: center;
-    /* border-bottom: 3px solid #f2f2f2; */
-    border: 1px solid #fff; /* Add white border to data cells */
-}
-
-/* Style for the nested table */
-td > table {
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  /* Apply styling to the table data rows */
+  tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #f2f2f2;
+    
+  }
+  
+  /* Style the sub-table for site names */
+  table table {
     width: 100%;
     border-collapse: collapse;
-}
+    margin: 0;
+    border: none;
+    
+  }
+  
+  /* Style the sub-table data rows */
+  table table tbody tr {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-/* Style for nested table cells */
-td > table td {
-    padding: 8px;
-    /* border: 3px solid #f2f2f2; */
-}
-
-/* Update the background color for the table body */
-tbody {
-    background-color: #58a8e9;
-}
-
-
-
-/* Add some animation on hover for a modern touch */
-
-
-/* Reduce padding on table rows (tr) */
-tbody tr {
-    padding: 6px 0; /* Adjust the padding as needed */
-}
-
-/* For smaller screens, make the table rows display as block for a more readable layout */
+    
+  }
+  
+  /* Style the site names */
+  table table td {
+    padding: 5px;
+    font-size: 14px;
+    color: #444;
+    
+  }
+  
+  /* Alternate row background for better readability */
+  tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Highlight the header cells */
+  /* thead th[colspan="2"],
+  thead th:nth-child(4) {
+    background-color: #2d98da;
+    color: #fff;
+  } */
+  
+  /* Center text and adjust font size for the "No Data Found" message */

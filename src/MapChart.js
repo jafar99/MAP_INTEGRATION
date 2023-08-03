@@ -151,7 +151,10 @@ const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
             </ZoomableGroup>
           </ComposableMap>
         </Col>
-        <Col span={12}></Col>
+        <Col span={12}>
+                
+
+        </Col>
       </Row>
     </>
   );

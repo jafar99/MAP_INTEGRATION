@@ -428,7 +428,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
         </Col>
         <Col span={6}>
           <>
-          {/* <table>
+          <table>
     <thead>
         <tr>
             <th>Area Name</th>
@@ -443,12 +443,12 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                     <tr>
                         <td>{item.area_name ? item.area_name : "No sites"}</td>
                         <td colSpan={2}>
-                            {item.site_names && item.site_names.length > 0 ? (
+                            {item.site_names ? (
                                 <table>
                                     <tbody>
-                                        {item?.site_names.map((site, idx) => (
+                                        {item.site_names.split(',').map((site, idx) => (
                                             <tr key={idx}>
-                                                <td>{site}</td>
+                                                <td>{site.trim()}</td>
                                             </tr>
                                         ))}
                                     </tbody>
@@ -457,7 +457,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                                 "No sites"
                             )}
                         </td>
-                        <td>{item.site_count ? item.site_count : "No sites"}</td>
+                        <td>{item.site_count ? item.site_count : "0"}</td>
                     </tr>
                 </React.Fragment>
             );
@@ -465,13 +465,17 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
 
         {apiData?.length === 0 && (
             <tr>
-                <td colSpan={4} style={{ textAlign: "center" , padding : "10px 0px" , fontSize:"1.4rem" }}>
+                <td colSpan={4} style={{ textAlign: "center", padding: "10px 0px", fontSize: "1.4rem" }}>
                     No Data Found
                 </td>
             </tr>
         )}
     </tbody>
-</table> */}
+</table>
+
+
+
+
 
           </>
         </Col>
