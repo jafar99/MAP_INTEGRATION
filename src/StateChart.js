@@ -344,50 +344,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
         </Col>
        <Col span={6}>
             <>
-            <table>
-    <thead>
-        <tr>
-            <th>Area Name</th>
-            <th colSpan={2}>Sites</th>
-            <th>Site Count</th>
-        </tr>
-    </thead>
-    <tbody>
-        {apiData?.map((item, index) => {
-            return (
-                <React.Fragment key={index}>
-                    <tr>
-                        <td>{item.area_name ? item.area_name : "No sites"}</td>
-                        <td colSpan={2}>
-                            {item.site_names && item.site_names.length > 0 ? (
-                                <table>
-                                    <tbody>
-                                        {item.site_names.map((site, idx) => (
-                                            <tr key={idx}>
-                                                <td>{site}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            ) : (
-                                "No sites"
-                            )}
-                        </td>
-                        <td>{item.site_count ? item.site_count : "No sites"}</td>
-                    </tr>
-                </React.Fragment>
-            );
-        })}
-
-        {apiData?.length === 0 && (
-            <tr>
-                <td colSpan={4} style={{ textAlign: "center" , padding : "10px 0px" , fontSize:"1.4rem" }}>
-                    No Data Found
-                </td>
-            </tr>
-        )}
-    </tbody>
-</table>
+ 
 
             </>    
        </Col>
