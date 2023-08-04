@@ -81,7 +81,7 @@ import "./style.css";
 let markers = [];
 const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
   const [geoURLNew, setGeoURLNew] = React.useState([]);
-  const[maxvalue,setmaxvalue]=React.useState(0);
+  const [maxvalue, setmaxvalue] = React.useState(0);
   let geoURL;
   let zoomMap = 1;
   let centerMap = [60, 22];
@@ -290,7 +290,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
         setApiData(res?.data?.data);
         console.log("API Data:", res?.data.data);
         // console.log("geoURL:", geoURL.objects);
-        let keyForObject = ""
+        let keyForObject = "";
         Object.keys(geoURL.objects).forEach(function (key) {
           keyForObject = key.toString();
           // console.log("Key:", keyForObject);
@@ -298,19 +298,28 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
         // console.log("New:",  geoURL.objects[keyForObject].geometries);
         // for loop on geoURL.objects[keyForObject].geometries & print properties
         let highest_site_count = 0;
-        for (let i = 0; i < geoURL.objects[keyForObject].geometries.length; i++) {
+        for (
+          let i = 0;
+          i < geoURL.objects[keyForObject].geometries.length;
+          i++
+        ) {
           // console.log("district:", geoURL.objects[keyForObject].geometries[i].properties.district);
-         let value = 0
+          let value = 0;
           // find district in res?.data.data using for loop
           for (let j = 0; j < res?.data.data.length; j++) {
-            if (geoURL.objects[keyForObject].geometries[i].properties.district == res?.data.data[j].area_name) {
+            if (
+              geoURL.objects[keyForObject].geometries[i].properties.district ==
+              res?.data.data[j].area_name
+            ) {
               value = res?.data.data[j].site_count;
               console.log("value:", value);
               break;
             }
           }
-          geoURL.objects[keyForObject].geometries[i].properties["site_count"] = value;
-          const site_count =  geoURL.objects[keyForObject].geometries[i].properties.site_count;
+          geoURL.objects[keyForObject].geometries[i].properties["site_count"] =
+            value;
+          const site_count =
+            geoURL.objects[keyForObject].geometries[i].properties.site_count;
           if (site_count > highest_site_count) {
             highest_site_count = site_count;
           }
@@ -355,21 +364,20 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                     const getFillColor = (siteCount) => {
                       let colorValue = 0;
                       let x = siteCount * 100;
-                      if(!maxvalue == 0){
-                        colorValue = (x / maxvalue).toFixed(0); 
+                      if (!maxvalue == 0) {
+                        colorValue = (x / maxvalue).toFixed(0);
                       }
 
-                      
                       if (colorValue <= 0) {
                         return `#D8D8D8`;
                       } else if (colorValue >= 1 && colorValue <= 25) {
-                        return `#FFFFF0`;
+                        return `#CEF1F6`;
                       } else if (colorValue >= 26 && colorValue <= 50) {
-                        return `#FAF8D9`;
+                        return `#8FDDE9`;
                       } else if (colorValue >= 51 && colorValue <= 75) {
-                        return `#F4EDCA`;
+                        return `#53BBCA`;
                       } else if (colorValue >= 76) {
-                        return `#F1E0B6`;
+                        return `#288CBC`;
                       }
                     };
 
@@ -389,7 +397,9 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                           }}
                           style={{
                             default: {
-                              fill: geo.properties.hasOwnProperty("site_count") ? getFillColor(geo.properties.site_count) : "#D8D8D8", // Change fill color based on density
+                              fill: geo.properties.hasOwnProperty("site_count")
+                                ? getFillColor(geo.properties.site_count)
+                                : "#D8D8D8", // Change fill color based on density
                               outline: "black",
                             },
                             hover: {
@@ -428,55 +438,57 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
         </Col>
         <Col span={6}>
           <>
-          <table>
-    <thead>
-        <tr>
-            <th>Area Name</th>
-            <th colSpan={2}>Sites</th>
-            <th>Site Count</th>
-        </tr>
-    </thead>
-    <tbody>
-        {apiData?.map((item, index) => {
-            return (
-                <React.Fragment key={index}>
-                    <tr>
+            <table>
+              <thead>
+                <tr>
+                  <th>Area Name</th>
+                  <th colSpan={2}>Sites</th>
+                  <th>Site Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                {apiData?.map((item, index) => {
+                  return (
+                    <React.Fragment key={index}>
+                      <tr>
                         <td>{item.area_name ? item.area_name : "No sites"}</td>
                         <td colSpan={2}>
-                            {item.site_names ? (
-                                <table>
-                                    <tbody>
-                                        {item.site_names.split(',').map((site, idx) => (
-                                            <tr key={idx}>
-                                                <td>{site.trim()}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            ) : (
-                                "No sites"
-                            )}
+                          {item.site_names ? (
+                            <table>
+                              <tbody>
+                                {item.site_names.split(",").map((site, idx) => (
+                                  <tr key={idx}>
+                                    <td>{site.trim()}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          ) : (
+                            "No sites"
+                          )}
                         </td>
                         <td>{item.site_count ? item.site_count : "0"}</td>
-                    </tr>
-                </React.Fragment>
-            );
-        })}
+                      </tr>
+                    </React.Fragment>
+                  );
+                })}
 
-        {apiData?.length === 0 && (
-            <tr>
-                <td colSpan={4} style={{ textAlign: "center", padding: "10px 0px", fontSize: "1.4rem" }}>
-                    No Data Found
-                </td>
-            </tr>
-        )}
-    </tbody>
-</table>
-
-
-
-
-
+                {apiData?.length === 0 && (
+                  <tr>
+                    <td
+                      colSpan={4}
+                      style={{
+                        textAlign: "center",
+                        padding: "10px 0px",
+                        fontSize: "1.4rem",
+                      }}
+                    >
+                      No Sites Found
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
           </>
         </Col>
       </Row>

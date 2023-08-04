@@ -860,7 +860,13 @@ const tamilNaduMarkers = [
   { name: "vikarabad", coordinates: [77.9049, 17.3386] },
   { name: "wanaparthy", coordinates: [78.0647, 16.3610] },
   { name: "warangal", coordinates: [79.5941, 17.9689] },
-  { name: "yadadri bhuvanagiri", coordinates: [78.8744, 17.6185] }
+  { name: "yadadri bhuvanagiri", coordinates: [78.8744, 17.6185] },
+  { name: "Vellore", coordinates: [79.1325, 12.9165] },
+  { name: "Coimbatore", coordinates: [76.9558, 11.0168] },
+  { name: "Erode", coordinates: [77.4172, 11.5410] }
+
+
+
 ];
 
 const andhrapradeshMarkers = [

@@ -71,13 +71,13 @@ const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
                       if (colorValue <= 0) {
                         return `#D8D8D8`;
                       } else if (colorValue >= 1 && colorValue <= 25) {
-                        return `#FFFFF0`;
+                        return `#CEF1F6`;
                       } else if (colorValue >= 26 && colorValue <= 50) {
-                        return `#FAF8D9`;
+                        return `#8FDDE9`;
                       } else if (colorValue >= 51 && colorValue <= 75) {
-                        return `#F4EDCA`;
+                        return `#53BBCA`;
                       } else if (colorValue >= 76) {
-                        return `#F1E0B6`;
+                        return `#288CBC`;
                       }
                     };
 

@@ -16,6 +16,7 @@ table {
     padding: 15px;
     font-weight: bold;
     color: #fff;
+    font-size: 1rem;
     border-bottom: 2px solid #e0e0e0;
   }
   
@@ -23,6 +24,7 @@ table {
   tbody td {
     padding: 15px;
     border-bottom: 1px solid #f2f2f2;
+    
     
   }
   
@@ -32,6 +34,7 @@ table {
     border-collapse: collapse;
     margin: 0;
     border: none;
+    
     
   }
   
@@ -46,7 +49,8 @@ table {
   /* Style the site names */
   table table td {
     padding: 5px;
-    font-size: 14px;
+    font-size: 0.9rem;
+
     color: #444;
     
   }
