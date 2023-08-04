@@ -371,13 +371,13 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                       if (colorValue <= 0) {
                         return `#D8D8D8`;
                       } else if (colorValue >= 1 && colorValue <= 25) {
-                        return `#CEF1F6`;
+                        return `#EAC696`;
                       } else if (colorValue >= 26 && colorValue <= 50) {
-                        return `#8FDDE9`;
+                        return `#C8AE7D`;
                       } else if (colorValue >= 51 && colorValue <= 75) {
-                        return `#53BBCA`;
+                        return `#765827`;
                       } else if (colorValue >= 76) {
-                        return `#288CBC`;
+                        return `#65451F`;
                       }
                     };
 
@@ -402,10 +402,10 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                                 : "#D8D8D8", // Change fill color based on density
                               outline: "black",
                             },
-                            hover: {
-                              fill: "#808080",
-                              outline: "none",
-                            },
+                            // hover: {
+                            //   fill: "#808080",
+                            //   outline: "none",
+                            // },
                             pressed: {
                               fill: "#2E8B57",
                               outline: "none",
