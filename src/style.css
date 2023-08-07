@@ -6,7 +6,7 @@ table {
     font-family: Arial, sans-serif;
     border: 1px solid #e0e0e0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 50% auto;
+    margin: 20% 30%;
     text-align: center;
   }
   
@@ -68,3 +68,6 @@ table {
   } */
   
   /* Center text and adjust font size for the "No Data Found" message */
+.left-map{
+  margin-left: -290px;
+}

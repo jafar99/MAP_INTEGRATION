@@ -102,10 +102,10 @@ const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
                               fill: stateMarker
                                 ? getFillColor(stateMarker.site_count)
                                 : "#D8D8D8", // Change fill color based on density
-                              outline: "black",
+                              outline: "none",
                             },
                             hover: {
-                              fill: "#D8D8D8",
+                              fill: "#f0f0f0",
                               outline: "none",
                             },
                             pressed: {
@@ -117,21 +117,18 @@ const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
                         {/* Render state marker */}
                         {stateMarker && (
                           <Marker coordinates={stateMarker.coordinates}>
-                            {/* <circle
-                            r={1}
-                            fill="red"
-                            onClick={() => {
-                              setStateName(stateMarker.name);
-                              setShowDistrict(true);
-                            }}
-                          /> */}
+                           
                             <text
                               textAnchor="middle"
                               style={{
-                                // fill: "#000",
+                                fill: "#000", // Text color
                                 fontWeight: "bold",
-                                fontSize: "0.13rem",
-                                zIndex: "auto", // Add zIndex property
+                                fontSize: "2px", // Adjust font size as needed
+                                zIndex: "1000", // Add zIndex property
+                                fontFamily: "Arial, sans-serif", // Specify font family
+                                whiteSpace: "nowrap", // Prevent text from wrapping
+                                pointerEvents: "none", // Disable pointer events on the text element
+                          
                               }}
                             >
                               {stateMarker?.site_name}

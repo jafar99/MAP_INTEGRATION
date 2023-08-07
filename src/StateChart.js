@@ -86,6 +86,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
   let zoomMap = 1;
   let centerMap = [60, 22];
   let scaleMap = 400;
+  
 
   if (selectedState === "Andaman & Nicobar Island") {
     geoURL = andamannicobar;
@@ -97,38 +98,38 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = andhrapradeshMarkers;
     geoURL = andhrapradesh;
     // setGeoURLNew(andhrapradesh);
-    scaleMap = 1100;
+    scaleMap = 1400;
     centerMap = [81, 17];
   } else if (selectedState === "Arunachal Pradesh") {
     markers = arunachalPradeshMarkers;
     geoURL = arunachalpradesh;
     // setGeoURLNew(arunachalpradesh);
-    scaleMap = 1200;
+    scaleMap = 1900;
     centerMap = [94.5, 28];
   } else if (selectedState === "Assam") {
     markers = assamMarkers;
     geoURL = assam;
     // setGeoURLNew(assam);
-    scaleMap = 1350;
+    scaleMap = 1750;
     centerMap = [92.9, 26];
   } else if (selectedState === "Bihar") {
     markers = biharMarkers;
     geoURL = bihar;
     // setGeoURLNew(bihar);
-    scaleMap = 1800;
+    scaleMap = 2400;
     centerMap = [85.5, 26];
   } else if (selectedState === "Chhattisgarh") {
     markers = chhattisgarhMarkers;
     geoURL = chhattisgarh;
     // setGeoURLNew(chhattisgarh);
-    scaleMap = 1100;
+    scaleMap = 1600;
     centerMap = [82, 21];
   } else if (selectedState === "Delhi") {
     markers = goaMarkers;
     markers = delhiMarkers;
     geoURL = delhi;
     // setGeoURLNew(delhi);
-    scaleMap = 12000;
+    scaleMap = 14000;
     centerMap = [77.05, 28.6];
   } else if (selectedState === "Goa") {
     geoURL = goa;
@@ -139,44 +140,44 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = gujaratMarkers;
     geoURL = gujarat;
     // setGeoURLNew(gujarat);
-    scaleMap = 1400;
-    centerMap = [71.5, 22];
+    scaleMap = 1900;
+    centerMap = [71.5, 23];
   } else if (selectedState === "Haryana") {
     markers = haryanaMarkers;
     geoURL = haryana;
     // setGeoURLNew(haryana);
-    scaleMap = 2200;
-    centerMap = [76, 29];
+    scaleMap = 2800;
+    centerMap = [76, 29.6456];
   } else if (selectedState === "Himachal Pradesh") {
     geoURL = himachalpradesh;
     // setGeoURLNew(himachalpradesh);
     markers = himachalPradeshMarkers;
-    scaleMap = 2300;
-    centerMap = [77.4, 31.8];
+    scaleMap = 2900;
+    centerMap = [77.4, 32];
   } else if (selectedState === "Jammu & Kashmir") {
     markers = jammuKashmirMarkers;
     geoURL = jammukashmir;
     // setGeoURLNew(jammukashmir);
-    scaleMap = 1400;
+    scaleMap = 1600;
     centerMap = [76.3, 35];
   } else if (selectedState === "Jharkhand") {
     markers = jharkhandMarkers;
     geoURL = jharkhand;
     // setGeoURLNew(jharkhand);
-    scaleMap = 1700;
+    scaleMap = 2200;
     centerMap = [85.7, 23.6];
   } else if (selectedState === "Karnataka") {
     markers = lakshadweepMarkers;
     markers = karnatakaMarkers;
     geoURL = karnataka;
     // setGeoURLNew(karnataka);
-    scaleMap = 1600;
-    centerMap = [76.5, 15];
+    scaleMap = 1700;
+    centerMap = [76.5, 15.6562];
   } else if (selectedState === "Kerala") {
     markers = keralaMarkers;
     geoURL = kerala;
     // setGeoURLNew(kerala);
-    scaleMap = 1800;
+    scaleMap = 2200;
     centerMap = [76, 10.5];
   } else if (selectedState === "Lakshadweep") {
     geoURL = lakshadweep;
@@ -187,25 +188,25 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = madhyaPradeshMarkers;
     geoURL = madhyapradesh;
     // setGeoURLNew(madhyapradesh);
-    scaleMap = 1300;
+    scaleMap = 1500;
     centerMap = [78.5, 24];
   } else if (selectedState === "Maharashtra") {
     markers = maharashtraMarkers;
     geoURL = maharashtra;
     // setGeoURLNew(maharashtra);
-    scaleMap = 1200;
+    scaleMap = 1300;
     centerMap = [76.8, 19.3];
   } else if (selectedState === "Manipur") {
     markers = manipurMarkers;
     geoURL = manipur;
     // setGeoURLNew(manipur);
-    scaleMap = 3400;
+    scaleMap = 4500;
     centerMap = [93.8, 24.7];
   } else if (selectedState === "Meghalaya") {
     markers = meghalayaMarkers;
     geoURL = meghalaya;
     // setGeoURLNew(meghalaya);
-    scaleMap = 2500;
+    scaleMap = 3600;
     centerMap = [91.3, 25.4];
   } else if (selectedState === "Mizoram") {
     markers = mizoramMarkers;
@@ -217,68 +218,68 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = nagalandMarkers;
     geoURL = nagaland;
     // setGeoURLNew(nagaland);
-    scaleMap = 4000;
+    scaleMap = 4600;
     centerMap = [94.3, 26.1];
   } else if (selectedState === "Odisha") {
     markers = odishaMarkers;
     geoURL = odisha;
     // setGeoURLNew(odisha);
-    scaleMap = 1300;
+    scaleMap = 1700;
     centerMap = [84.4, 20.25];
   } else if (selectedState === "Punjab") {
     markers = punjabMarkers;
     geoURL = punjab;
     // setGeoURLNew(punjab);
-    scaleMap = 2500;
-    centerMap = [75.35, 31.1];
+    scaleMap = 3000;
+    centerMap = [75.35, 31.2564];
   } else if (selectedState === "Rajasthan") {
     markers = rajasthanMarkers;
     geoURL = rajasthan;
     // setGeoURLNew(rajasthan);
-    scaleMap = 1100;
-    centerMap = [74, 26.3];
+    scaleMap = 1400;
+    centerMap = [74, 27.3];
   } else if (selectedState === "Sikkim") {
     markers = sikkimMarkers;
     geoURL = sikkim;
     // setGeoURLNew(sikkim);
-    scaleMap = 6000;
+    scaleMap = 8000;
     centerMap = [88.45, 27.6];
   } else if (selectedState === "Tamilnadu") {
     markers = tamilNaduMarkers;
     geoURL = tamilnadu;
     // setGeoURLNew(tamilnadu);
-    scaleMap = 1300;
+    scaleMap = 1900;
     centerMap = [78.25, 10.8];
   } else if (selectedState === "Telangana") {
     markers = telanganaMarkers;
     geoURL = telangana;
     // setGeoURLNew(telangana);
-    scaleMap = 1800;
+    scaleMap = 2500;
     centerMap = [79.5, 17.9];
   } else if (selectedState === "Tripura") {
     markers = tripuraMarkers;
     geoURL = tripura;
     // setGeoURLNew(tripura);
-    scaleMap = 4500;
+    scaleMap = 5500;
     centerMap = [91.75, 23.75];
   } else if (selectedState === "Uttarakhand") {
     markers = uttarakhandMarkers;
     geoURL = uttarakhand;
     // setGeoURLNew(uttarakhand);
-    scaleMap = 2000;
-    centerMap = [79.3, 30];
+    scaleMap = 3000;
+    centerMap = [79.3, 30.3564];
   } else if (selectedState === "Uttar Pradesh") {
     markers = uttarpradeshMarkers; // Fix the variable name here
     geoURL = uttarpradesh; // Make sure the geoURL matches your data source
     // setGeoURLNew(uttarpradesh);
-    scaleMap = 1600;
-    centerMap = [80.8, 27];
+    scaleMap = 1700;
+    centerMap = [80.8, 27.4565];
   } else if (selectedState === "West Bengal") {
     markers = westBengalMarkers;
     geoURL = westbengal;
     // setGeoURLNew(westbengal);
-    scaleMap = 1200;
-    centerMap = [87.7, 24.2];
+    scaleMap = 1600;
+    centerMap = [87.7, 25];
   }
 
   const [apiData, setApiData] = React.useState([]);
@@ -342,13 +343,15 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     <>
       {console.log("Selected State:", selectedState)}
       <Row>
-        <Col span={18}>
+        <Col span={12}>
           <ComposableMap
             data-tip=""
             projection="geoMercator"
-            width={200}
+            width={230}
             height={240}
             projectionConfig={{ scale: scaleMap }}
+            className="left-map"
+
           >
             <ZoomableGroup zoom={zoomMap} center={centerMap}>
               <Geographies geography={geoURLNew == {} ? geoURL : geoURLNew}>
@@ -402,10 +405,10 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                                 : "#D8D8D8", // Change fill color based on density
                               outline: "black",
                             },
-                            // hover: {
-                            //   fill: "#808080",
-                            //   outline: "none",
-                            // },
+                            hover: {
+                              fill: "#f0f0f0",
+                              outline: "none",
+                            },
                             pressed: {
                               fill: "#2E8B57",
                               outline: "none",
@@ -436,7 +439,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
             </ZoomableGroup>
           </ComposableMap>
         </Col>
-        <Col span={6}>
+        <Col span={12}>
           <>
             <table>
               <thead>
