@@ -294,6 +294,7 @@ const keralaMarkers = [
     { name: "Sri Ganganagar", coordinates: [73.8767, 29.9038] },
     { name: "Tonk", coordinates: [75.7873, 26.1610] },
     { name: "Udaipur", coordinates: [73.7139, 24.5854] },
+    {name :"Ganganagar", coordinates: [73.4767, 29.6038]},
   ];
   
   const andamanNicobarMarkers = [
