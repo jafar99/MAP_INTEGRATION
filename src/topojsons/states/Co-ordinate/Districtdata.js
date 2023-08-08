@@ -302,15 +302,10 @@ const keralaMarkers = [
   ];
   
   const andamanNicobarMarkers = [
-    { name: "Port Blair", coordinates: [92.7405, 11.6234] },
-    { name: "Havelock Island", coordinates: [93.0077, 11.9616] },
-    { name: "Neil Island", coordinates: [93.0220, 11.8345] },
-    { name: "Diglipur", coordinates: [92.9846, 13.0072] },
-    { name: "Rangat", coordinates: [92.9733, 12.4924] },
-    { name: "Mayabunder", coordinates: [92.8317, 12.2379] },
-    { name: "Port Blair", coordinates: [92.7405, 11.6234] },
-    { name: "Baratang Island", coordinates: [92.8112, 12.2260] },
-    { name: "Little Andaman", coordinates: [92.9721, 10.7317] },
+    {name : "Nicobar", coordinates: [93.7874, 7.8450]},
+    {name : "North and Middle Andaman", coordinates: [92.6586, 12.6122]},
+    {name : "South Andaman", coordinates: [92.6586, 12.6122]},
+   
     // Add more cities/places as needed
   ];
   const andhraPradeshMarkers = [

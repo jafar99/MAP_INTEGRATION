@@ -8,12 +8,22 @@ import {
 } from "react-simple-maps";
 import { Row, Col } from "antd";
 import axios from "axios";
+import {Graph1 } from "./Graph/Graph1";
 
 import india from "./topojsons/india.json";
+import { Graph2 } from "./Graph/Graph2";
 // import { Alert } from "@material-ui/lab"
 const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
   const [apiData, setApiData] = React.useState([]);
   const[maxvalue,setmaxvalue]=React.useState(0);
+
+  const colStyle = {
+    padding: '16px',
+    borderRadius: '8px',
+    backgroundColor: 'white', // Set background color to white
+    marginBottom: '16px',
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)', // Add a subtle box shadow
+};
 
   function sitesData() {
     axios
@@ -148,8 +158,15 @@ const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
             </ZoomableGroup>
           </ComposableMap>
         </Col>
-        <Col span={12}>
+        <Col span={11} style={{margin:"10px "}}>
                 
+                
+        <Col  style={colStyle}>
+                <Graph1 />
+            </Col>
+            <Col  style={colStyle}>
+                <Graph2 />
+            </Col>
 
         </Col>
       </Row>
