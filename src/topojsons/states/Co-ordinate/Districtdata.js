@@ -247,16 +247,20 @@ const keralaMarkers = [
   ];
   
   const delhiMarkers = [
-    { name: "Central Delhi", coordinates: [77.2167, 28.6643] },
-    { name: "East Delhi", coordinates: [77.2902, 28.6207] },
-    { name: "New Delhi", coordinates: [77.2090, 28.6139] },
-    { name: "North Delhi", coordinates: [77.2315, 28.6895] },
-    { name: "North East Delhi", coordinates: [77.3073, 28.7233] },
-    { name: "North West Delhi", coordinates: [77.0728, 28.6142] },
-    { name: "South Delhi", coordinates: [77.1757, 28.4852] },
-    { name: "South East Delhi", coordinates: [77.3198, 28.5635] },
-    { name: "South West Delhi", coordinates: [76.9981, 28.5921] },
-    { name: "West Delhi", coordinates: [77.1237, 28.6470] },
+  
+    { name: "New Delhi", coordinates: [77.2190, 28.6139] },
+    { name: "North East", coordinates: [77.3024, 28.7133] },
+    { name: "West", coordinates: [77.0631, 28.6692] },
+    { name: "North", coordinates: [77.2023, 28.7475] },
+    { name: "South", coordinates: [77.1699, 28.4852] },
+    { name: "East", coordinates: [77.3333, 28.6139] },
+    { name: "South West", coordinates: [77.0000, 28.6] },
+    { name: "North West", coordinates: [77.1023, 28.7475] },
+    { name: "South East", coordinates: [77.0190, 28.6139] },
+
+    
+  
+    
     // Add more cities/districts as needed
   ];
 
