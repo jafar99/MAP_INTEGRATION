@@ -164,7 +164,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = jharkhandMarkers;
     geoURL = jharkhand;
     // setGeoURLNew(jharkhand);
-    scaleMap = 2200;
+    scaleMap = 2500;
     centerMap = [85.7, 23.6];
   } else if (selectedState === "Karnataka") {
     markers = lakshadweepMarkers;
@@ -224,7 +224,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = odishaMarkers;
     geoURL = odisha;
     // setGeoURLNew(odisha);
-    scaleMap = 1700;
+    scaleMap = 1900;
     centerMap = [84.4, 20.25];
   } else if (selectedState === "Punjab") {
     markers = punjabMarkers;
