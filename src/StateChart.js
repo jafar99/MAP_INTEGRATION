@@ -212,7 +212,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = mizoramMarkers;
     geoURL = mizoram;
     // setGeoURLNew(mizoram);
-    scaleMap = 2900;
+    scaleMap = 3100;
     centerMap = [92.8, 23.25];
   } else if (selectedState === "Nagaland") {
     markers = nagalandMarkers;

@@ -855,6 +855,7 @@ const mizoramMarkers = [
   { name: "Saitual", coordinates: [92.6836, 23.6171] },
   { name: "Bairabi", coordinates: [92.8291, 24.3260] },
   { name: "Thenzawl", coordinates: [92.5385, 23.3170] },
+  {name : "Lawangtlai" , coordinates : [92.5983, 22.5411] },
   // Add more cities/places as needed
 ];
 
