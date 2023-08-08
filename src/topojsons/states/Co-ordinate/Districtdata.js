@@ -50,7 +50,7 @@ const maharashtraMarkers = [
     { name: "Buldhana", coordinates: [76.1842, 20.507] },
     { name: "Chandrapur", coordinates: [79.2961, 19.9615] },
     { name: "Dhule", coordinates: [74.7745, 20.9042] },
-    { name: "Gadchiroli", coordinates: [80.1811, 20.196] },
+    { name: "Gadchiroli", coordinates: [80.4811, 20.196] },
     { name: "Gondia", coordinates: [80.1926, 21.4602] },
     { name: "Hingoli", coordinates: [77.1446, 19.7072] },
     { name: "Jalgaon", coordinates: [75.5329, 21.0488] },
@@ -77,6 +77,7 @@ const maharashtraMarkers = [
     { name: "Wardha", coordinates: [78.6022, 20.7453] },
     { name: "Washim", coordinates: [77.1406, 20.1136] },
     { name: "Yavatmal", coordinates: [78.1204, 20.3888] },
+    {name : "Bhandara", coordinates: [79.9926, 21.3602]},
 //     // Add more districts as needed
   ];
   const karnatakaMarkers = [

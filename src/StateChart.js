@@ -194,7 +194,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = maharashtraMarkers;
     geoURL = maharashtra;
     // setGeoURLNew(maharashtra);
-    scaleMap = 1300;
+    scaleMap = 1400;
     centerMap = [76.8, 19.3];
   } else if (selectedState === "Manipur") {
     markers = manipurMarkers;
