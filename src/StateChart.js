@@ -254,7 +254,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = telanganaMarkers;
     geoURL = telangana;
     // setGeoURLNew(telangana);
-    scaleMap = 2500;
+    scaleMap = 3000;
     centerMap = [79.5, 17.9];
   } else if (selectedState === "Tripura") {
     markers = tripuraMarkers;
