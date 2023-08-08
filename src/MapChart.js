@@ -124,7 +124,7 @@ const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
                                 fill: "#000", // Text color
                                 fontWeight: "bold",
                                 fontSize: "2px", // Adjust font size as needed
-                                zIndex: "1000", // Add zIndex property
+                                zIndex: "auto", // Add zIndex property
                                 fontFamily: "Arial, sans-serif", // Specify font family
                                 whiteSpace: "nowrap", // Prevent text from wrapping
                                 pointerEvents: "none", // Disable pointer events on the text element

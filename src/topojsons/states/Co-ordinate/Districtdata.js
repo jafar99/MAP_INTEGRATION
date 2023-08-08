@@ -360,7 +360,6 @@ const keralaMarkers = [
   
   const arunachalPradeshMarkers = [
     { name: "Anjaw", coordinates: [96.8141, 28.0237] },
-    { name: "Dibang Valley (Upper Dibang Valley)", coordinates: [95.5094, 28.1234] },
     { name: "East Kameng", coordinates: [93.2067, 27.5333] },
     { name: "East Siang", coordinates: [95.3762, 28.4650] },
     { name: "Kamle", coordinates: [93.4674, 27.9753] },
@@ -376,10 +375,19 @@ const keralaMarkers = [
     { name: "Siang", coordinates: [95.4486, 28.0341] },
     { name: "Tawang", coordinates: [91.8644, 27.5874] },
     { name: "Tirap", coordinates: [95.3333, 27.0000] },
-    { name: "Upper Siang", coordinates: [94.2000, 28.3333] },
-    { name: "Upper Subansiri", coordinates: [94.2500, 28.1667] },
+    { name: "Upper Siang", coordinates: [94.9926, 28.5935] },
+    { name: "Upper Subansiri", coordinates: [93.6926, 28.4935] },
     { name: "West Kameng", coordinates: [92.3333, 27.1667] },
-    { name: "West Siang", coordinates: [94.3926, 28.5935] }
+    { name: "West Siang", coordinates: [94.3926, 28.5935] },
+    {name : "East Siang" , coordinates : [95.3762, 28.4650] },
+    {name : "Dibang Valley" , coordinates : [95.8900, 28.8667] },
+    {name : "Papum Pare" , coordinates : [93.7167, 27.1833] },
+    {name : "Tawang" , coordinates : [91.8644, 27.5874] },
+    {name : "Changlang" , coordinates : [96.2000, 27.5000] },
+    {name : "Kurung Kumey" , coordinates : [93.2333, 28.0000] },
+    {name : "Lower Subansiri" , coordinates : [93.9167, 27.5833] },
+    // {name : "Papum Pare" , coordinates : [93.9167, 27.0833] },
+    // {name : "Tirap" , coordinates : [95.3333, 27.0000] },
   ];
   const assamMarkers = [
     { name: "Guwahati", coordinates: [91.7362, 26.1445] },
@@ -496,20 +504,8 @@ const keralaMarkers = [
     // Add more cities/places as needed
   ];
   const goaMarkers = [
-    { name: "Panaji", coordinates: [73.8287, 15.4909] },
-    { name: "Margao", coordinates: [73.9872, 15.2755] },
-    { name: "Vasco da Gama", coordinates: [73.8278, 15.3920] },
-    { name: "Calangute", coordinates: [73.7465, 15.5515] },
-    { name: "Mapusa", coordinates: [73.8089, 15.5915] },
-    { name: "Ponda", coordinates: [74.0024, 15.3991] },
-    { name: "Candolim", coordinates: [73.7639, 15.5189] },
-    { name: "Baga", coordinates: [73.7460, 15.5703] },
-    { name: "Anjuna", coordinates: [73.7442, 15.5794] },
-    { name: "Arambol", coordinates: [73.7063, 15.6896] },
-    { name: "Colva", coordinates: [73.9124, 15.2713] },
-    { name: "Dona Paula", coordinates: [73.7771, 15.4555] },
-    { name: "Old Goa", coordinates: [73.9062, 15.4969] },
-    // Add more cities/places as needed
+  {name : "South Goa" , coordinates : [74.0662, 15.0827] },
+  {name : "North Goa" , coordinates : [73.9419, 15.4989] },
   ];
   const gujaratMarkers = [
     { name: 'Ahmedabad', coordinates: [72.4797, 23.0016] },
@@ -834,10 +830,11 @@ const nagalandMarkers = [
   { name: "Wokha", coordinates: [94.2632, 26.1034] },
   { name: "Zunheboto", coordinates: [94.5164, 25.9708] },
   { name: "Phek", coordinates: [94.5193, 25.6765] },
-  { name: "Mon", coordinates: [94.5286, 26.7544] },
-  { name: "Longleng", coordinates: [94.8585, 26.2854] },
-  { name: "Peren", coordinates: [94.3676, 25.8715] },
-  { name: "Kiphire", coordinates: [94.9423, 25.9185] },
+  { name: "Mon", coordinates: [94.9286, 26.7544] },
+  { name: "Longleng", coordinates: [94.8086, 26.5044] },
+  { name: "Peren", coordinates: [93.5976, 25.5715] },
+  { name: "Kiphire", coordinates: [94.9423, 25.8185] },
+
   // Add more cities/places as needed
 ];
 
@@ -875,16 +872,15 @@ const meghalayaMarkers = [
 
 const manipurMarkers = [
   { name: "Imphal", coordinates: [93.9368, 24.8170] },
-  { name: "Thoubal", coordinates: [94.0197, 24.7523] },
-  { name: "Bishnupur", coordinates: [93.9527, 24.4965] },
-  { name: "Churachandpur", coordinates: [93.6723, 24.3313] },
-  { name: "Senapati", coordinates: [94.1937, 25.1294] },
+  { name: "Thoubal", coordinates: [94.0197, 24.5023] },
+  { name: "Bishnupur", coordinates: [93.8027, 24.4965] },
+  { name: "Churachandpur", coordinates: [93.2723, 24.3313] },
+  { name: "Senapati", coordinates: [93.9937, 25.1294] },
   { name: "Ukhrul", coordinates: [94.3661, 25.1685] },
   { name: "Tamenglong", coordinates: [93.6206, 24.9334] },
   { name: "Kangpokpi", coordinates: [93.9096, 24.3141] },
-  { name: "Imphal West", coordinates: [93.9144, 24.7540] },
   { name: "Imphal East", coordinates: [93.9833, 24.7781] },
-  { name: "Chandel", coordinates: [93.9272, 24.5739] },
+  { name: "Chandel", coordinates: [94.2272, 24.3739] },
   { name: "Jiribam", coordinates: [93.9905, 25.1120] },
   { name: "Tengnoupal", coordinates: [94.0344, 24.5870] },
   { name: "Kakching", coordinates: [93.9873, 24.4754] },

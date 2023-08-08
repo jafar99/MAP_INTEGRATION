@@ -104,7 +104,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = arunachalPradeshMarkers;
     geoURL = arunachalpradesh;
     // setGeoURLNew(arunachalpradesh);
-    scaleMap = 1900;
+    scaleMap = 2200;
     centerMap = [94.5, 28];
   } else if (selectedState === "Assam") {
     markers = assamMarkers;
@@ -134,7 +134,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
   } else if (selectedState === "Goa") {
     geoURL = goa;
     // setGeoURLNew(goa);
-    scaleMap = 6000;
+    scaleMap = 7000;
     centerMap = [74, 15.25];
   } else if (selectedState === "Gujarat") {
     markers = gujaratMarkers;
@@ -200,7 +200,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = manipurMarkers;
     geoURL = manipur;
     // setGeoURLNew(manipur);
-    scaleMap = 4500;
+    scaleMap = 4800;
     centerMap = [93.8, 24.7];
   } else if (selectedState === "Meghalaya") {
     markers = meghalayaMarkers;
@@ -218,7 +218,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = nagalandMarkers;
     geoURL = nagaland;
     // setGeoURLNew(nagaland);
-    scaleMap = 4600;
+    scaleMap = 4800;
     centerMap = [94.3, 26.1];
   } else if (selectedState === "Odisha") {
     markers = odishaMarkers;
@@ -417,13 +417,21 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                         />
 
                         {marker && (
+                          
                           <Marker coordinates={marker.coordinates}>
+                            {/* <circle
+
+                              r={0.5}
+                              fill="#F00"
+                              stroke="#fff"
+                              strokeWidth={0.1}
+                            /> */}
                             <text
                               textAnchor="middle"
                               style={{
                                 fill: "black",
                                 fontWeight: "bold",
-                                fontSize: "0.18rem",
+                                fontSize: "0.19rem",
                                 zIndex: "auto",
                               }}
                             >
