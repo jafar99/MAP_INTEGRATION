@@ -278,7 +278,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = westBengalMarkers;
     geoURL = westbengal;
     // setGeoURLNew(westbengal);
-    scaleMap = 1600;
+    scaleMap = 1800;
     centerMap = [87.7, 25];
   }
 
