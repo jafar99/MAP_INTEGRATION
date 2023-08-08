@@ -110,7 +110,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = assamMarkers;
     geoURL = assam;
     // setGeoURLNew(assam);
-    scaleMap = 1750;
+    scaleMap = 1850;
     centerMap = [92.9, 26];
   } else if (selectedState === "Bihar") {
     markers = biharMarkers;

@@ -216,7 +216,7 @@ const keralaMarkers = [
     { name: "Nainital", coordinates: [79.4712, 29.3803] },
     { name: "Pauri Garhwal", coordinates: [78.7783, 30.1554] },
     { name: "Pithoragarh", coordinates: [80.2276, 29.5802] },
-    { name: "Rudraprayag", coordinates: [79.1283, 30.2920] },
+    { name: "Rudraprayag", coordinates: [79.1283, 30.3920] },
     { name: "Tehri Garhwal", coordinates: [78.6712, 30.3929] },
     { name: "Udham Singh Nagar", coordinates: [79.5192, 29.0069] },
     { name: "Uttarkashi", coordinates: [78.4462, 30.7264] },
@@ -393,9 +393,32 @@ const keralaMarkers = [
     { name: "Diphu", coordinates: [93.9748, 25.8425] },
     { name: "North Lakhimpur", coordinates: [94.1082, 27.2405] },
     { name: "Karimganj", coordinates: [92.3573, 24.8693] },
-    { name: "Goalpara", coordinates: [90.6097, 26.1765] },
+    { name: "Goalpara", coordinates: [90.6097, 26.0765] },
     { name: "Dhubri", coordinates: [89.9959, 26.0210] },
-    { name: "Kokrajhar", coordinates: [89.2153, 26.4049] },
+    { name: "Kokrajhar", coordinates: [89.9153, 26.4049] },
+    { name: "Darrang", coordinates: [92.0164, 26.5736] },
+    // { name: "Bongaigaon", coordinates: [90.4058, 26.4825] },
+    { name: "Barpeta", coordinates: [91.0169, 26.3165] },
+    { name: "Nalbari", coordinates: [91.4365, 26.4419] },
+    { name: "Dhemaji", coordinates: [94.5761, 27.4818] },
+    { name: "Sonitpur", coordinates: [92.8577, 26.6445] },
+    { name: "Cachar", coordinates: [92.8577, 24.8333] },
+    { name: "Hailakandi", coordinates: [92.5752, 24.6815] },
+    { name: "Kamrup", coordinates: [91.7506, 26.1131] },
+    { name: "Kamrup Metropolitan", coordinates: [91.7506, 26.1131] },
+    { name: "Lakhimpur", coordinates: [94.1082, 27.2405] },
+    { name: "Morigaon", coordinates: [92.4181, 26.2507] },
+    { name: "Baksa", coordinates: [91.5000, 26.6000] },
+    { name: "Udalguri", coordinates: [92.1000, 26.7500] },
+    { name: "Chirang", coordinates: [90.5000, 26.5000] },
+    { name: "Biswanath", coordinates: [93.1667, 26.7500] },
+    { name: "Charaideo", coordinates: [94.7500, 27.2500] },
+    { name: "South Salmara-Mankachar", coordinates: [89.7500, 25.7500] },
+    { name: "Hojai", coordinates: [92.8500, 26.0000] },
+    { name: "West Karbi Anglong", coordinates: [92.5000, 26.0000] },
+    {name : "Karbi Anglong" , coordinates : [93.3000, 26.0000] },
+    {name : "Dima Hasao" , coordinates : [93.2500, 25.3333] },
+    {name : "Golaghat" , coordinates : [94.1000, 26.1500] },
     // Add more cities/places as needed
   ];
 
@@ -757,20 +780,12 @@ const tripuraMarkers = [
 ];
 
 const sikkimMarkers = [
-  { name: "Gangtok", coordinates: [88.6138, 27.3389] },
-  { name: "Namchi", coordinates: [88.3557, 27.1681] },
-  { name: "Pelling", coordinates: [88.2736, 27.3165] },
-  { name: "Ravangla", coordinates: [88.3547, 27.1143] },
-  { name: "Yuksom", coordinates: [88.2181, 27.3741] },
-  { name: "Lachen", coordinates: [88.6464, 27.7416] },
-  { name: "Lachung", coordinates: [88.7500, 27.7204] },
-  { name: "Gyalshing", coordinates: [88.2759, 27.2932] },
-  { name: "Singtam", coordinates: [88.5086, 27.2345] },
-  { name: "Mangan", coordinates: [88.5450, 27.5161] },
-  { name: "Rangpo", coordinates: [88.5868, 27.2243] },
-  { name: "Nathu La", coordinates: [88.7200, 27.4241] },
-  { name: "Phodong", coordinates: [88.5122, 27.3779] },
-  { name: "Chungthang", coordinates: [88.6213, 27.5910] },
+  {name : "North", coordinates : [88.6000, 27.5333] },
+  {name : "East", coordinates : [88.8000, 27.3333] },
+  {name : "South", coordinates : [88.4000, 27.3000] },
+  {name : "West", coordinates : [88.1000, 27.3333] },
+
+ 
   // Add more cities/places as needed
 ];
 const odishaMarkers = [
@@ -844,20 +859,16 @@ const mizoramMarkers = [
 ];
 
 const meghalayaMarkers = [
-  { name: "Shillong", coordinates: [91.8833, 25.5788] },
-  { name: "Cherrapunji", coordinates: [91.6956, 25.2977] },
-  { name: "Tura", coordinates: [90.5003, 25.5143] },
-  { name: "Jowai", coordinates: [92.1825, 25.2955] },
-  { name: "Nongstoin", coordinates: [91.2600, 25.5142] },
-  { name: "Williamnagar", coordinates: [90.6165, 25.2948] },
-  { name: "Baghmara", coordinates: [90.5075, 25.6542] },
-  { name: "Dawki", coordinates: [91.6849, 25.2001] },
-  { name: "Resubelpara", coordinates: [90.6479, 25.8995] },
-  { name: "Mairang", coordinates: [91.5260, 25.5714] },
-  { name: "Nongpoh", coordinates: [91.8765, 25.8982] },
-  { name: "Nongpoh", coordinates: [91.8765, 25.8982] },
-  { name: "Dalu", coordinates: [91.6864, 25.8696] },
-  { name: "Mawkyrwat", coordinates: [91.5029, 25.3001] },
+ {name : "East Khasi Hills" , coordinates : [91.8662, 25.3788] },
+  {name : "West Khasi Hills" , coordinates : [91.3662, 25.5788] },
+  {name : "South West Khasi Hills" , coordinates : [91.3662, 25.5788] },
+  {name : "Ri Bhoi" , coordinates : [91.8662, 25.8788] },
+  {name : "Jaintia Hills" , coordinates : [92.3662, 25.3788] },
+  {name : "West Jaintia Hills" , coordinates : [91.3662, 25.5788] },
+  {name : "East Garo Hills" , coordinates : [90.5662, 25.5788] },
+  {name : "West Garo Hills" , coordinates : [90.1662, 25.5788] },
+  {name : "South Garo Hills" , coordinates : [90.5662, 25.2788] },
+ 
   // Add more cities/places as needed
 ];
 
