@@ -433,20 +433,30 @@ const keralaMarkers = [
     { name: 'West Champaran', coordinates: [84.4937, 27.1278] },
   ];
   const chhattisgarhMarkers = [
-    { name: "Raipur", coordinates: [81.6296, 21.2514] },
+    { name: "Raipur", coordinates: [81.7296, 21.2514] },
     { name: "Bhilai", coordinates: [81.4332, 21.1938] },
     { name: "Bilaspur", coordinates: [82.1557, 22.0797] },
     { name: "Korba", coordinates: [82.6929, 22.3551] },
     { name: "Raigarh", coordinates: [83.3962, 21.9004] },
-    { name: "Durg", coordinates: [81.2797, 21.1902] },
+    { name: "Durg", coordinates: [81.3797, 21.1902] },
     { name: "Rajnandgaon", coordinates: [80.6300, 21.0961] },
     { name: "Jagdalpur", coordinates: [82.0393, 19.0742] },
     { name: "Ambikapur", coordinates: [83.1830, 23.1218] },
     { name: "Dhamtari", coordinates: [81.5489, 20.7019] },
-    { name: "Mahasamund", coordinates: [82.0830, 21.1109] },
+    { name: "Mahasamund", coordinates: [82.3830, 21.1109] },
     { name: "Kanker", coordinates: [81.4962, 20.2710] },
     { name: "Kawardha", coordinates: [81.2719, 22.0081] },
     { name: "Janjgir", coordinates: [82.5798, 22.0092] },
+    {name : "Uttar Bastar Kanker" , coordinates : [81.4962, 20.2710] },
+    {name : "Bastar" , coordinates : [81.6062, 19.6710] },
+    {name : "Narayanpur" , coordinates : [81.0572, 19.6700] },
+    {name : "Bijapur" , coordinates : [80.9500, 18.8000] },
+    {name : "Dakshin Bastar Dantewada" , coordinates : [81.6500, 18.4000] },
+    {name : "Janjgir-champa" , coordinates : [82.6962, 21.9004] },
+    {name : "Jashpur" , coordinates : [83.8000, 22.7500] },
+    {name : "Surguja" , coordinates : [83.0000, 23.5000] },
+    {name : "Koriya" , coordinates : [82.3000, 23.5000] },
+    {name : "Kabeerdham" , coordinates : [81.2557, 22.0797] },
     // Add more cities/places as needed
   ];
   const goaMarkers = [

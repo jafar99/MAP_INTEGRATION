@@ -122,8 +122,8 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = chhattisgarhMarkers;
     geoURL = chhattisgarh;
     // setGeoURLNew(chhattisgarh);
-    scaleMap = 1600;
-    centerMap = [82, 21];
+    scaleMap = 1700;
+    centerMap = [82, 21.6];
   } else if (selectedState === "Delhi") {
     markers = goaMarkers;
     markers = delhiMarkers;
@@ -255,7 +255,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     geoURL = telangana;
     // setGeoURLNew(telangana);
     scaleMap = 3000;
-    centerMap = [79.5, 17.9];
+    centerMap = [79.5, 18];
   } else if (selectedState === "Tripura") {
     markers = tripuraMarkers;
     geoURL = tripura;
