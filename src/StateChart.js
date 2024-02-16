@@ -181,6 +181,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     centerMap = [76, 10.5];
   } else if (selectedState === "Lakshadweep") {
     geoURL = lakshadweep;
+    markers = lakshadweepMarkers;
     // setGeoURLNew(lakshadweep);
     scaleMap = 2300;
     centerMap = [73, 11];
@@ -194,7 +195,7 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
     markers = maharashtraMarkers;
     geoURL = maharashtra;
     // setGeoURLNew(maharashtra);
-    scaleMap = 1400;
+    scaleMap = 1500;
     centerMap = [76.8, 19.3];
   } else if (selectedState === "Manipur") {
     markers = manipurMarkers;
@@ -367,20 +368,20 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                     const getFillColor = (siteCount) => {
                       let colorValue = 0;
                       let x = siteCount * 100;
-                      if (!maxvalue == 0) {
-                        colorValue = (x / maxvalue).toFixed(0);
+                      if(!maxvalue == 0){
+                        colorValue = (x / maxvalue).toFixed(0); 
                       }
-
+                      
                       if (colorValue <= 0) {
                         return `#D8D8D8`;
                       } else if (colorValue >= 1 && colorValue <= 25) {
-                        return `#EAC696`;
+                        return `#CEF1F6`;
                       } else if (colorValue >= 26 && colorValue <= 50) {
-                        return `#C8AE7D`;
+                        return `#8FDDE9`;
                       } else if (colorValue >= 51 && colorValue <= 75) {
-                        return `#765827`;
+                        return `#53BBCA`;
                       } else if (colorValue >= 76) {
-                        return `#65451F`;
+                        return `#288CBC`;
                       }
                     };
 
@@ -416,29 +417,28 @@ const StateChart = ({ setTooltipContent, setDistrictName, selectedState }) => {
                           }}
                         />
 
-                        {marker && (
-                          
-                          <Marker coordinates={marker.coordinates}>
-                            {/* <circle
+{marker && (
+  <Marker coordinates={marker?.coordinates}>
+    <g transform={`translate(${marker.coordinates[0]}, ${marker.coordinates[1]})`} style={{ zIndex: -1 }}>
+      {/* Add the circle or other marker graphics here */}
+    </g>
+    <text
+    
+      textAnchor="middle"
+      style={{
+        fill: "black",
+        fontWeight: "bold",
+        fontSize: "0.19rem",
+      }}
+    >
+      {marker?.name}
+    </text>
+  </Marker>
+)}
 
-                              r={0.5}
-                              fill="#F00"
-                              stroke="#fff"
-                              strokeWidth={0.1}
-                            /> */}
-                            <text
-                              textAnchor="middle"
-                              style={{
-                                fill: "black",
-                                fontWeight: "bold",
-                                fontSize: "0.19rem",
-                                zIndex: "auto",
-                              }}
-                            >
-                              {marker.name}
-                            </text>
-                          </Marker>
-                        )}
+
+
+                        
                       </>
                     );
                   })

@@ -21,8 +21,8 @@ const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
     padding: '16px',
     borderRadius: '8px',
     backgroundColor: 'white', // Set background color to white
-    marginBottom: '16px',
-    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)', // Add a subtle box shadow
+    margin: '20% auto', // Set top and bottom margin
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.4)', // Add a subtle box shadow
 };
 
   function sitesData() {
@@ -81,13 +81,13 @@ const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
                       if (colorValue <= 0) {
                         return `#D8D8D8`;
                       } else if (colorValue >= 1 && colorValue <= 25) {
-                        return `#EAC696`;
+                        return `#CEF1F6`;
                       } else if (colorValue >= 26 && colorValue <= 50) {
-                        return `#C8AE7D`;
+                        return `#8FDDE9`;
                       } else if (colorValue >= 51 && colorValue <= 75) {
-                        return `#765827`;
+                        return `#53BBCA`;
                       } else if (colorValue >= 76) {
-                        return `#65451F`;
+                        return `#288CBC`;
                       }
                     };
 
@@ -133,12 +133,10 @@ const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
                               style={{
                                 fill: "#000", // Text color
                                 fontWeight: "bold",
-                                fontSize: "2px", // Adjust font size as needed
+                                fontSize: "1.9px", // Adjust font size as needed
                                 zIndex: "auto", // Add zIndex property
                                 fontFamily: "Arial, sans-serif", // Specify font family
-                                whiteSpace: "nowrap", // Prevent text from wrapping
-                                pointerEvents: "none", // Disable pointer events on the text element
-                          
+                             
                               }}
                             >
                               {stateMarker?.site_name}
@@ -158,17 +156,14 @@ const MapChart = ({ setTooltipContent, setStateName, setShowDistrict }) => {
             </ZoomableGroup>
           </ComposableMap>
         </Col>
-        <Col span={11} style={{margin:"10px "}}>
+        {/* <Col span={11} >
                 
                 
-        <Col  style={colStyle}>
-                <Graph1 />
-            </Col>
             <Col  style={colStyle}>
                 <Graph2 />
             </Col>
 
-        </Col>
+        </Col> */}
       </Row>
     </>
   );

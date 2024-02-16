@@ -574,20 +574,12 @@ const keralaMarkers = [
     { name: "Purbi Singhbhum", coordinates: [86.6167, 22.8000] },
     {name : "Pashchimi Singhbhum" , coordinates : [85.6000, 22.3000] },
     {name : "Kodarma" , coordinates : [85.5561, 24.3963] },
+    {name : "Giridih" , coordinates : [86.3012, 24.1852] },
     // Add more cities/places as needed
   ];
   const lakshadweepMarkers = [
-    { name: "Kavaratti", coordinates: [72.6378, 10.5593] },
-    { name: "Agatti", coordinates: [72.1754, 10.8319] },
-    { name: "Amini", coordinates: [72.9363, 11.1085] },
-    { name: "Andrott", coordinates: [72.7237, 11.5293] },
-    { name: "Kalpeni", coordinates: [73.5679, 10.0498] },
-    { name: "Kadmat", coordinates: [73.4600, 11.2254] },
-    { name: "Kiltan", coordinates: [73.0069, 11.4006] },
-    { name: "Chetlat", coordinates: [73.0524, 11.2400] },
-    { name: "Bitra", coordinates: [72.9682, 11.1894] },
-    { name: "Bangaram", coordinates: [72.2047, 10.9412] },
-    { name: "Lakshadweep (Kavaratti)", coordinates: [72.6369, 10.5593] }, // Kavaratti serves as the capital of Lakshadweep
+    { name: "Lakshadweep", coordinates: [72.0833, 12.3000] },
+
     // Add more islands/places as needed
   ];
   const madhyaPradeshMarkers = [
@@ -1142,5 +1134,6 @@ const andhrapradeshMarkers = [
 ];
 
 
-export {andhrapradeshMarkers,telanganaMarkers,westBengalMarkers,uttarpradeshMarkers,tripuraMarkers,tamilNaduMarkers,sikkimMarkers,odishaMarkers,nagalandMarkers,mizoramMarkers,meghalayaMarkers,manipurMarkers,andamanNicobarMarkers,andhraPradeshMarkers,arunachalPradeshMarkers,assamMarkers,biharMarkers,chhattisgarhMarkers,goaMarkers,gujaratMarkers ,jharkhandMarkers,lakshadweepMarkers,madhyaPradeshMarkers,keralaMarkers, karnatakaMarkers, maharashtraMarkers,jammuKashmirMarkers,himachalPradeshMarkers,punjabMarkers,uttarakhandMarkers,haryanaMarkers,delhiMarkers,rajasthanMarkers, };
+
+export { andhrapradeshMarkers,telanganaMarkers,westBengalMarkers,uttarpradeshMarkers,tripuraMarkers,tamilNaduMarkers,sikkimMarkers,odishaMarkers,nagalandMarkers,mizoramMarkers,meghalayaMarkers,manipurMarkers,andamanNicobarMarkers,andhraPradeshMarkers,arunachalPradeshMarkers,assamMarkers,biharMarkers,chhattisgarhMarkers,goaMarkers,gujaratMarkers ,jharkhandMarkers,lakshadweepMarkers,madhyaPradeshMarkers,keralaMarkers, karnatakaMarkers, maharashtraMarkers,jammuKashmirMarkers,himachalPradeshMarkers,punjabMarkers,uttarakhandMarkers,haryanaMarkers,delhiMarkers,rajasthanMarkers, };
   
